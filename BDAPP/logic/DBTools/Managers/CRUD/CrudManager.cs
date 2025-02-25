@@ -204,6 +204,37 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
             return dataTable;
         }
 
+        public DataTable Search(string lastName, string firstName, string group_num)
+        {
+            string query = @"
+                SELECT s.student_id, s.students_group_number, s.last_name, s.first_name, f.field_name, fc.mark
+                FROM students s
+                JOIN field_comprehensions fc ON s.student_id = fc.student_id
+                JOIN fields f ON fc.field = f.field_id
+                WHERE s.last_name = @lastName AND s.first_name = @firstName AND s.students_group_number = @group";
+
+            DataTable dataTable = new DataTable();
+            using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
+            {
+                command.Parameters.AddWithValue("@lastName", lastName);
+                command.Parameters.AddWithValue("@firstName", firstName);
+                command.Parameters.AddWithValue("@group", group_num);
+                try
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Information("Ошибка при выполнении запроса: " + ex.Message);
+                }
+            }
+
+            return dataTable;
+        }
+
         public DataTable Search(int id,string fieldName)
         {
             string query = @"

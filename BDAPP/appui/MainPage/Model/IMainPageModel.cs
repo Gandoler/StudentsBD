@@ -9,6 +9,7 @@ namespace BDAPP.appui.MainPage.Model
 {
     interface IMainPageModel
     {
+        public DataTable searchFORCHILD(StudentFieldTemplates studentFieldTemplates);
         public void AddMark(StudentFieldTemplates studentFieldTemplates);
 
         public void UpdateMark(StudentFieldTemplates studentFieldTemplates);

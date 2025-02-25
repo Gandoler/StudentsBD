@@ -19,5 +19,6 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
         public DataTable Search(string lastName, string firstName);
         public DataTable Search(int id, string fieldName);
         public DataTable SELECT();
+        public DataTable Search(string lastName, string firstName, string group_num);
     }
 }

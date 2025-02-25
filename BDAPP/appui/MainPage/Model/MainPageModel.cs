@@ -67,6 +67,12 @@ namespace BDAPP.appui.MainPage.Model
         }
 
 
+        public DataTable searchFORCHILD(StudentFieldTemplates studentFieldTemplates)
+        {
+            return _crudManager.Search(studentFieldTemplates.Last_Name, studentFieldTemplates.First_Name, studentFieldTemplates.Student_Group_Number);
+        }
+
+
         public DataTable GetFullTable()
         {
             return _crudManager.SELECT();

@@ -36,6 +36,7 @@ namespace BDAPP.appui.MainPage
             //search and Unsearch
             _mainPageView.SearchButtonByIDClick += _mainPageView_SearchButtonByIDClick; ;
             _mainPageView.SearchButtonByNAMEANDFAMClick += _mainPageView_SearchButtonByNAMEANDFAMClick;
+            _mainPageView.SearchButtonByfamNameGroupClick += _mainPageView_SearchButtonByfamNameGroupClick;
             _mainPageView.ClearSearchButtonClick += _mainPageView_ClearSearchButtonClick;
 
             //inittable 
@@ -43,9 +44,14 @@ namespace BDAPP.appui.MainPage
 
         }
 
+        private void _mainPageView_SearchButtonByfamNameGroupClick(StudentFieldTemplates obj)
+        {
+            _mainPageView.UpdateTable(_mainPageModel.searchFORCHILD(obj));
+        }
+
         private void _mainPageView_SearchButtonByNAMEANDFAMClick(StudentFieldTemplates obj)
         {
-            _mainPageView.UpdateTable(_mainPageModel.searchById(obj));
+            _mainPageView.UpdateTable(_mainPageModel.searchByNames(obj));
         }
 
         private void _mainPageView_SearchButtonByIDClick(StudentFieldTemplates obj)

@@ -85,6 +85,7 @@ namespace BDAPP.appui.MainPage.View.Admin
         public event Action<StudentFieldTemplates>? UPDButtonClick;
         public event Action? AppstartMouseEnter;
         public event Action<StudentFieldTemplates>? SearchButtonByNAMEANDFAMClick;
+        public event Action<StudentFieldTemplates>? SearchButtonByfamNameGroupClick;
 
         public void MakeExitButtonForeBlack()
         {
