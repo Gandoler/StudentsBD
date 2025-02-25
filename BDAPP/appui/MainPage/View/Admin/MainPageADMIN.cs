@@ -1,5 +1,7 @@
 ﻿using BDAPP.appui.MainPage.Model;
+using Microsoft.IdentityModel.Tokens;
 using System.Data;
+using System.Management;
 
 namespace BDAPP.appui.MainPage.View.Admin
 {
@@ -18,8 +20,7 @@ namespace BDAPP.appui.MainPage.View.Admin
             ExitButton.MouseLeave += (s, e) => ExitButtonLeavd?.Invoke();
 
             // seacrh buuton
-            Search_Button.Click += (s, e) => SearchButtonClick?.Invoke(new StudentFieldTemplates(LastNameTEXTBOX.Text,
-                                                                                                NameTextBox.Text, GroupTExtBox.Text));
+            Search_Button.Click += Search_Button_Click;
 
             // Clear Search
             ClearSearch_button.Click += (s, e) => ClearSearchButtonClick?.Invoke();
@@ -35,6 +36,32 @@ namespace BDAPP.appui.MainPage.View.Admin
             DataTableGRIDView.MouseClick += (s, e) => AppstartMouseEnter?.Invoke();
         }
 
+        private void Search_Button_Click(object? sender, EventArgs e)
+        {
+            
+            if (int.TryParse(ID_TEXTBOX.Text, out int studentId) && studentId != 0)
+            {
+               
+                SearchButtonByIDClick?.Invoke(new StudentFieldTemplates(studentId));
+                return; 
+            }
+
+           
+            string lastName = LastNameTEXTBOX.Text;
+            string firstName = NameTextBox.Text;
+
+          
+            if (!string.IsNullOrEmpty(lastName) && !string.IsNullOrEmpty(firstName))
+            {
+
+                SearchButtonByNAMEANDFAMClick?.Invoke(new StudentFieldTemplates(lastName, firstName));
+                return; // Завершаем метод
+            }
+
+            
+            MessageBox.Show("Ошибка: необходимо заполнить либо ID студента, либо фамилию и имя.");
+        }
+
 
 
 
@@ -45,7 +72,7 @@ namespace BDAPP.appui.MainPage.View.Admin
 
 
         // seacrh buuton
-        public event Action<StudentFieldTemplates>? SearchButtonClick;
+        public event Action<StudentFieldTemplates>? SearchButtonByIDClick;
 
 
         // clear search 
@@ -57,6 +84,7 @@ namespace BDAPP.appui.MainPage.View.Admin
         public event Action<StudentFieldTemplates>? DELButtonClick;
         public event Action<StudentFieldTemplates>? UPDButtonClick;
         public event Action? AppstartMouseEnter;
+        public event Action<StudentFieldTemplates>? SearchButtonByNAMEANDFAMClick;
 
         public void MakeExitButtonForeBlack()
         {

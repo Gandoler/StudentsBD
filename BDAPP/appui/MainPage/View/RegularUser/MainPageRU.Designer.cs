@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPageRU));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             ExitButton = new Guna.UI2.WinForms.Guna2CircleButton();
             panel4 = new Panel();
@@ -55,12 +55,6 @@
             LastNameTEXTBOX = new Guna.UI2.WinForms.Guna2TextBox();
             LastNamelavel = new Label();
             DataTableGRIDView = new DataGridView();
-            Student_id = new DataGridViewTextBoxColumn();
-            studentGropNumber = new DataGridViewTextBoxColumn();
-            last_name = new DataGridViewTextBoxColumn();
-            first_Naem = new DataGridViewTextBoxColumn();
-            fieled_name = new DataGridViewTextBoxColumn();
-            st_mark = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             mainPanel.SuspendLayout();
@@ -94,7 +88,7 @@
             ExitButton.Location = new Point(844, 0);
             ExitButton.Margin = new Padding(4, 3, 4, 3);
             ExitButton.Name = "ExitButton";
-            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges1;
             ExitButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             ExitButton.Size = new Size(34, 39);
             ExitButton.TabIndex = 20;
@@ -169,7 +163,7 @@
             // Search_Button
             // 
             Search_Button.BorderRadius = 15;
-            Search_Button.CustomizableEdges = customizableEdges11;
+            Search_Button.CustomizableEdges = customizableEdges2;
             Search_Button.DisabledState.BorderColor = Color.DarkGray;
             Search_Button.DisabledState.CustomBorderColor = Color.DarkGray;
             Search_Button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -180,7 +174,7 @@
             Search_Button.Location = new Point(703, 213);
             Search_Button.Margin = new Padding(3, 2, 3, 2);
             Search_Button.Name = "Search_Button";
-            Search_Button.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            Search_Button.ShadowDecoration.CustomizableEdges = customizableEdges3;
             Search_Button.Size = new Size(153, 46);
             Search_Button.TabIndex = 19;
             Search_Button.Text = "Поиск";
@@ -188,7 +182,7 @@
             // GroupTExtBox
             // 
             GroupTExtBox.BorderRadius = 15;
-            GroupTExtBox.CustomizableEdges = customizableEdges13;
+            GroupTExtBox.CustomizableEdges = customizableEdges4;
             GroupTExtBox.DefaultText = "";
             GroupTExtBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             GroupTExtBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -202,7 +196,7 @@
             GroupTExtBox.Name = "GroupTExtBox";
             GroupTExtBox.PlaceholderText = "";
             GroupTExtBox.SelectedText = "";
-            GroupTExtBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            GroupTExtBox.ShadowDecoration.CustomizableEdges = customizableEdges5;
             GroupTExtBox.Size = new Size(181, 35);
             GroupTExtBox.TabIndex = 17;
             // 
@@ -219,7 +213,7 @@
             // NameTextBox
             // 
             NameTextBox.BorderRadius = 15;
-            NameTextBox.CustomizableEdges = customizableEdges15;
+            NameTextBox.CustomizableEdges = customizableEdges6;
             NameTextBox.DefaultText = "";
             NameTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             NameTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -233,7 +227,7 @@
             NameTextBox.Name = "NameTextBox";
             NameTextBox.PlaceholderText = "";
             NameTextBox.SelectedText = "";
-            NameTextBox.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            NameTextBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
             NameTextBox.Size = new Size(181, 35);
             NameTextBox.TabIndex = 15;
             // 
@@ -250,7 +244,7 @@
             // LastNameTEXTBOX
             // 
             LastNameTEXTBOX.BorderRadius = 15;
-            LastNameTEXTBOX.CustomizableEdges = customizableEdges17;
+            LastNameTEXTBOX.CustomizableEdges = customizableEdges8;
             LastNameTEXTBOX.DefaultText = "";
             LastNameTEXTBOX.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             LastNameTEXTBOX.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -264,7 +258,7 @@
             LastNameTEXTBOX.Name = "LastNameTEXTBOX";
             LastNameTEXTBOX.PlaceholderText = "";
             LastNameTEXTBOX.SelectedText = "";
-            LastNameTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            LastNameTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges9;
             LastNameTEXTBOX.Size = new Size(181, 35);
             LastNameTEXTBOX.TabIndex = 9;
             // 
@@ -286,7 +280,6 @@
             DataTableGRIDView.BackgroundColor = Color.WhiteSmoke;
             DataTableGRIDView.BorderStyle = BorderStyle.None;
             DataTableGRIDView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataTableGRIDView.Columns.AddRange(new DataGridViewColumn[] { Student_id, studentGropNumber, last_name, first_Naem, fieled_name, st_mark });
             DataTableGRIDView.Location = new Point(12, 5);
             DataTableGRIDView.Margin = new Padding(3, 2, 3, 2);
             DataTableGRIDView.Name = "DataTableGRIDView";
@@ -294,42 +287,6 @@
             DataTableGRIDView.RowHeadersWidth = 51;
             DataTableGRIDView.Size = new Size(673, 369);
             DataTableGRIDView.TabIndex = 0;
-            // 
-            // Student_id
-            // 
-            Student_id.FillWeight = 152.284286F;
-            Student_id.HeaderText = "ID";
-            Student_id.MinimumWidth = 50;
-            Student_id.Name = "Student_id";
-            // 
-            // studentGropNumber
-            // 
-            studentGropNumber.FillWeight = 108.400269F;
-            studentGropNumber.HeaderText = "Группа";
-            studentGropNumber.Name = "studentGropNumber";
-            // 
-            // last_name
-            // 
-            last_name.FillWeight = 108.400269F;
-            last_name.HeaderText = "Фамилия";
-            last_name.Name = "last_name";
-            // 
-            // first_Naem
-            // 
-            first_Naem.FillWeight = 108.400269F;
-            first_Naem.HeaderText = "Имя";
-            first_Naem.Name = "first_Naem";
-            // 
-            // fieled_name
-            // 
-            fieled_name.FillWeight = 108.400269F;
-            fieled_name.HeaderText = "Дисциплина";
-            fieled_name.Name = "fieled_name";
-            // 
-            // st_mark
-            // 
-            st_mark.HeaderText = "оценка";
-            st_mark.Name = "st_mark";
             // 
             // MainPageRU
             // 
@@ -370,11 +327,5 @@
         private Guna.UI2.WinForms.Guna2TextBox NameTextBox;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button Search_Button;
-        private DataGridViewTextBoxColumn Student_id;
-        private DataGridViewTextBoxColumn studentGropNumber;
-        private DataGridViewTextBoxColumn last_name;
-        private DataGridViewTextBoxColumn first_Naem;
-        private DataGridViewTextBoxColumn fieled_name;
-        private DataGridViewTextBoxColumn st_mark;
     }
 }

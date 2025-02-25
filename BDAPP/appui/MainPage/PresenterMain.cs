@@ -3,6 +3,7 @@ using BDAPP.appui.MainPage.View;
 using BDAPP.appui.MainPage.View.Admin;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,12 +34,23 @@ namespace BDAPP.appui.MainPage
             _mainPageView.DELButtonClick += _mainPageAdminVeiw_DELButtonClick;
 
             //search and Unsearch
-            _mainPageView.SearchButtonClick += _mainPageView_SearchButtonClick;
+            _mainPageView.SearchButtonByIDClick += _mainPageView_SearchButtonByIDClick; ;
+            _mainPageView.SearchButtonByNAMEANDFAMClick += _mainPageView_SearchButtonByNAMEANDFAMClick;
             _mainPageView.ClearSearchButtonClick += _mainPageView_ClearSearchButtonClick;
 
             //inittable 
             _mainPageView.AppstartMouseEnter += _mainPageView_AppstartMouseEnter;
 
+        }
+
+        private void _mainPageView_SearchButtonByNAMEANDFAMClick(StudentFieldTemplates obj)
+        {
+            _mainPageView.UpdateTable(_mainPageModel.searchById(obj));
+        }
+
+        private void _mainPageView_SearchButtonByIDClick(StudentFieldTemplates obj)
+        {
+            _mainPageView.UpdateTable(_mainPageModel.searchById(obj));
         }
 
         private void _mainPageView_AppstartMouseEnter()
@@ -48,28 +60,64 @@ namespace BDAPP.appui.MainPage
 
         private void _mainPageView_ClearSearchButtonClick()
         {
-            throw new NotImplementedException();
+            _mainPageView.UpdateTable(_mainPageModel.GetFullTable());
         }
 
-        private void _mainPageView_SearchButtonClick(StudentFieldTemplates obj)
-        {
-            throw new NotImplementedException();
-        }
+            
 
       
         private void _mainPageAdminVeiw_DELButtonClick(StudentFieldTemplates obj)
         {
-            throw new NotImplementedException();
+            if (obj == null)
+            {
+                MessageBox.Show("Ошибка: объект студента не задан.");
+                return;
+            }
+
+            if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name))
+            {
+                MessageBox.Show("Ошибка: не все обязательные поля заполнены.");
+                return;
+            }
+
+            _mainPageModel.DeleteMark(obj);
+            _mainPageView.UpdateTable(_mainPageModel.GetFullTable());
         }
 
         private void _mainPageAdminVeiw_UPDButtonClick(StudentFieldTemplates obj)
         {
-            throw new NotImplementedException();
+            if (obj == null)
+            {
+                MessageBox.Show("Ошибка: объект студента не задан.");
+                return;
+            }
+
+            if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name) || obj.Mark == 0)
+            {
+                MessageBox.Show("Ошибка: не все обязательные поля заполнены.");
+                return;
+            }
+
+            _mainPageModel.UpdateMark(obj);
+            _mainPageView.UpdateTable(_mainPageModel.GetFullTable());
         }
 
         private void _mainPageAdminVeiw_AddButtonClick(StudentFieldTemplates obj)
         {
-            throw new NotImplementedException();
+            if (obj == null)
+            {
+                MessageBox.Show("Ошибка: объект студента не задан.");
+                return;
+            }
+
+            if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name) || obj.Mark == 0)
+            {
+                MessageBox.Show("Ошибка: не все обязательные поля заполнены.");
+                return;
+            }
+
+            _mainPageModel.AddMark(obj);
+            _mainPageView.UpdateTable(_mainPageModel.GetFullTable());
         }
         private void EXITFUNC()
         {

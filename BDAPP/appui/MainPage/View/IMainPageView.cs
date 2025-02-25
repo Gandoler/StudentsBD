@@ -16,7 +16,9 @@ namespace BDAPP.appui.MainPage.View
         public event Action? AppstartMouseEnter;
 
         // seacrh buuton
-        public event Action<StudentFieldTemplates>? SearchButtonClick;
+        public event Action<StudentFieldTemplates>? SearchButtonByIDClick;
+        public event Action<StudentFieldTemplates>? SearchButtonByNAMEANDFAMClick;
+        public event Action<StudentFieldTemplates>? SearchButtonByfamNameGroupClick;
 
         // clear search 
         public event Action? ClearSearchButtonClick;
