@@ -1,4 +1,4 @@
-﻿namespace OTSCSERVER.Tools.AppSettingsParse.Templaetes
+﻿namespace BDAPP.logic.AppSettingsParse.Templaetes
 {
     internal interface ITemplates
     {

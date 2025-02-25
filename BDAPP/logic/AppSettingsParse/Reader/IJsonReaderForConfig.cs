@@ -1,6 +1,6 @@
-﻿using OTSCSERVER.Tools.AppSettingsParse.Templaetes;
+﻿using BDAPP.logic.AppSettingsParse.Templaetes;
 
-namespace OTSCSERVER.Tools.AppSettingsParse.Reader
+namespace BDAPP.logic.AppSettingsParse.Reader
 {
     internal interface IJsonReaderForConfig
     {

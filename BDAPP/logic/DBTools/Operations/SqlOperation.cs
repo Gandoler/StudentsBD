@@ -1,17 +1,17 @@
-﻿using OTSC_ui.Tools.DBTools.Connection;
+﻿using BDAPP.logic.DBTools.Connection;
+using Npgsql;
 using System.Data;
 
-
-namespace OTSC_ui.Tools.DBTools.Operations
+namespace BDAPP.logic.DBTools.Operations
 {
     internal class SqlOperation : ISqlOperation
     {
         private readonly IConnectManager _connectManager;
-        SqlOperation(IConnectManager ConnectManager)
-        {
-            _connectManager = ConnectManager;
-        }
 
+        public SqlOperation(IConnectManager connectManager)
+        {
+            _connectManager = connectManager;
+        }
 
         public void Delete(string query)
         {
@@ -26,8 +26,8 @@ namespace OTSC_ui.Tools.DBTools.Operations
         public void Select(string query, out DataTable results)
         {
             results = new DataTable();
-            using (var command = new MySqlCommand(query, _connectManager.SqlConnection))
-            using (var adapter = new MySqlDataAdapter(command))
+            using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
+            using (var adapter = new NpgsqlDataAdapter(command))
             {
                 adapter.Fill(results);
             }
@@ -40,7 +40,7 @@ namespace OTSC_ui.Tools.DBTools.Operations
 
         private void ExecuteQuery(string query)
         {
-            using (var command = new MySqlCommand(query, _connectManager.SqlConnection))
+            using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
             {
                 command.ExecuteNonQuery();
             }

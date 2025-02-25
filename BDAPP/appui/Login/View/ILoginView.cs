@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace calculator_winforms.AppLogic.Login.View
+namespace BDAPP.appui.Login.View
 {
     interface ILoginView
     {

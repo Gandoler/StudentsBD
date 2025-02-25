@@ -1,14 +1,15 @@
-﻿using Serilog;
+﻿using Npgsql;
+using Serilog;
 using System.Data;
 
-namespace OTSC_ui.Tools.DBTools.Connection
+namespace BDAPP.logic.DBTools.Connection
 {
     internal class ConnectDBManager : IConnectManager
     {
         private readonly string _connectionString;
-        private NpgsqlConnection _connection;
+        private NpgsqlConnection? _connection;
 
-        public MySqlConnection? SqlConnection
+        public NpgsqlConnection? SqlConnection
         {
             get
             {
@@ -38,48 +39,53 @@ namespace OTSC_ui.Tools.DBTools.Connection
 
         public void Connect()
         {
-            _connection = new MySqlConnection(_connectionString);
             try
             {
+                _connection = new NpgsqlConnection(_connectionString);
                 _connection.Open();
-                string query = "Use Users";
-                MySqlCommand command = new MySqlCommand(query, _connection);
-                command.ExecuteNonQuery();
-            }
-            catch (MySqlException ex)
-            {
+
                 
-                // Обработка MySQL исключений
-                Log.Error("MySQL error occurred: " + ex.Message);
+                string query = "SET search_path TO STUDENTSNEW";
+                using (var command = new NpgsqlCommand(query, _connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                Log.Information("Connection to PostgreSQL database established.");
+            }
+            catch (NpgsqlException ex)
+            {
+                Log.Error("PostgreSQL error occurred: " + ex.Message);
+                throw;
             }
             catch (InvalidOperationException ex)
             {
-                // Обработка исключений, возникающих при некорректной операции
                 Log.Error("Invalid operation: " + ex.Message);
+                throw;
             }
             catch (Exception ex)
             {
-                // Обработка всех остальных исключений
                 Log.Error("An unexpected error occurred: " + ex.Message);
+                throw;
             }
-            
         }
 
         public void Disconnect()
         {
-            if (_connection != null)
+            if (_connection != null && _connection.State != ConnectionState.Closed)
             {
                 try
                 {
                     _connection.Close();
+                    Log.Information("Connection to PostgreSQL database closed.");
                 }
-                catch (MySqlException ex)
+                catch (NpgsqlException ex)
                 {
-                    // Обработка исключений, возникающих при закрытии соединения
                     Log.Error("An error occurred while closing the connection: " + ex.Message);
                 }
                 finally
                 {
+                    _connection.Dispose();
                     _connection = null;
                 }
             }

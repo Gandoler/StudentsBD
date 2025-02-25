@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
-using OTSCSERVER.Tools.AppSettingsParse.Templaetes;
+﻿using BDAPP.logic.AppSettingsParse.Templaetes;
+using Newtonsoft.Json;
 using Serilog;
 using System;
 using System.IO;
 
 
-namespace OTSCSERVER.Tools.AppSettingsParse.Reader
+namespace BDAPP.logic.AppSettingsParse.Reader
 {
     internal class JsonReaderForConfig : IJsonReaderForConfig
     {

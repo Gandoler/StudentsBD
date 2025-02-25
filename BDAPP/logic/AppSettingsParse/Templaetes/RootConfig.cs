@@ -1,7 +1,6 @@
-﻿
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace OTSCSERVER.Tools.AppSettingsParse.Templaetes
+namespace BDAPP.logic.AppSettingsParse.Templaetes
 {
     public class RootConfig : ITemplates
     {

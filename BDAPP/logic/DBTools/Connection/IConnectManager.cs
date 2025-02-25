@@ -1,13 +1,13 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Npgsql;
 
 
-namespace OTSC_ui.Tools.DBTools.Connection
+namespace BDAPP.logic.DBTools.Connection
 {
     internal interface IConnectManager
     {
         void Connect();
         void Disconnect();
-        MySqlConnection? SqlConnection { get; }
+        NpgsqlConnection? SqlConnection { get; }
 
 
     }

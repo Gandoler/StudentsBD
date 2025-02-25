@@ -1,11 +1,11 @@
-﻿using System;
+﻿using BDAPP.logic.DBTools.Managers.Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 
-namespace calculator_winforms.AppLogic.Login.Model
+namespace BDAPP.appui.Login.Model
 {
      
     class LoginModel : ILoginModel
@@ -23,8 +23,8 @@ namespace calculator_winforms.AppLogic.Login.Model
 
 
         //login
-        public event Action<bool> LoginGo;
-        public event EventHandler<string> LoginFailed;
+        public event Action<bool>? LoginGo;
+        public event EventHandler<string>? LoginFailed;
 
 
         public void LogInApl(string _login, string _password)
@@ -33,11 +33,11 @@ namespace calculator_winforms.AppLogic.Login.Model
             {
                 if (_loginManager.Login(_login, _password))
                 {
-                    LoginGo.Invoke(true);
+                    LoginGo?.Invoke(true);
                 }
                 else
                 {
-                    LoginGo.Invoke(true);
+                    LoginGo?.Invoke(true);
                 }
             }
             catch (Exception exception)

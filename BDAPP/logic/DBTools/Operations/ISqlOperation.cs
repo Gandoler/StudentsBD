@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace OTSC_ui.Tools.DBTools.Operations
+namespace BDAPP.logic.DBTools.Operations
 {
     internal interface ISqlOperation
     {

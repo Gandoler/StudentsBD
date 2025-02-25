@@ -1,9 +1,9 @@
-﻿using OTSC_ui.Tools.DBTools.Connection;
-using OTSC_ui.Tools.DBTools.Operations;
+﻿using BDAPP.logic.DBTools.Connection;
+using BDAPP.logic.DBTools.Operations;
 using System.Data;
 
 
-namespace OTSCSERVER.Tools.DBTools.Managers
+namespace BDAPP.logic.DBTools.Managers
 {
     internal class DataManager
     {

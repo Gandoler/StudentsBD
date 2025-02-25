@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace calculator_winforms.AppLogic.MainPage.Model
+namespace BDAPP.appui.MainPage.Model
 {
     class MainPageModel: IMainPageModel
     {

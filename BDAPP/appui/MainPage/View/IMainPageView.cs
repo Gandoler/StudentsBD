@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace calculator_winforms.AppLogic.MainPage.View
+namespace BDAPP.appui.MainPage.View
 {
     interface IMainPageView
     {

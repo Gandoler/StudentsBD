@@ -1,3 +1,5 @@
+using Serilog;
+
 namespace BDAPP
 {
     internal static class Program
@@ -11,7 +13,12 @@ namespace BDAPP
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Log.Logger = new LoggerConfiguration()
+               .WriteTo.File(@"C:\Users\glkru\OneDrive\Desktop\prj\Project_cpo\User_setup\Logs\myapp.log", rollingInterval: RollingInterval.Day)
+               .CreateLogger();
+
+
+            Log.Information("App start");
         }
     }
 }

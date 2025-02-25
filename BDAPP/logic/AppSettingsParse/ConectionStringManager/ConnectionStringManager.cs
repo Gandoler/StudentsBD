@@ -1,10 +1,9 @@
-﻿using OTSCSERVER;
-using OTSCSERVER.Tools.AppSettingsParse.Reader;
-using OTSCSERVER.Tools.AppSettingsParse.Templaetes;
+﻿using BDAPP.logic.AppSettingsParse.Reader;
+using BDAPP.logic.AppSettingsParse.Templaetes;
 using Serilog;
 using System;
 
-namespace OTSCSERVER.Tools.AppSettingsParse.ConectionStringManager
+namespace BDAPP.logic.AppSettingsParse.ConectionStringManager
 {
     internal static class ConnectionStringManager
     {
@@ -20,7 +19,7 @@ namespace OTSCSERVER.Tools.AppSettingsParse.ConectionStringManager
             JsonReaderForConfig jsonReader = new JsonReaderForConfig();
             try
             {
-                rootConfig = jsonReader.Read<RootConfig>(ProgramSettings.Default.AppsettingsPath);
+                rootConfig = jsonReader.Read<RootConfig>();
                 Log.Information($"ConnectionStringManager: settings:{rootConfig}");
             }
             catch (Exception ex)
@@ -30,7 +29,7 @@ namespace OTSCSERVER.Tools.AppSettingsParse.ConectionStringManager
 
         }
 
-        public static string GetConnectionString()
+        public static string? GetConnectionString()
         {
             if (rootConfig.ServerSettings != null)
             {
@@ -40,10 +39,7 @@ namespace OTSCSERVER.Tools.AppSettingsParse.ConectionStringManager
         }
 
 
-        public static string GetTelegramToken()
-        {
-            return rootConfig.TgBotSettings.ToString();
-        }
+       
 
 
     }

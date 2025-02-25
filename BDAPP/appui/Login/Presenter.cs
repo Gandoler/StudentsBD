@@ -1,5 +1,5 @@
-﻿using calculator_winforms.AppLogic.Login.Model;
-using calculator_winforms.AppLogic.Login.View;
+﻿using BDAPP.appui.Login.Model;
+using BDAPP.appui.Login.View;
 using calculator_winforms.AppLogic.MainPage.View;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace calculator_winforms.AppLogic.Login
+namespace BDAPP.appui.Login
 {
     class Presenter
     {
