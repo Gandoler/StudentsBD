@@ -1,4 +1,6 @@
 ﻿using BDAPP.logic.DBTools.Managers.CRUD;
+using Serilog;
+using System.Data;
 
 
 
@@ -20,28 +22,53 @@ namespace BDAPP.appui.MainPage.Model
 
         public void AddMark(StudentFieldTemplates studentFieldTemplates)
         {
+            if (_role == "junior")
+            {
+                Log.Information("junchik попытался взять данные");
+                return;
+            }
             _crudManager.AddMark(studentFieldTemplates.Student_id, studentFieldTemplates.Field_Name, studentFieldTemplates.Mark);
         }
 
         public void UpdateMark(StudentFieldTemplates studentFieldTemplates)
         {
+            if (_role == "junior")
+            {
+                Log.Information("junchik попытался взять данные");
+                return;
+            }
             _crudManager.UpdateMark(studentFieldTemplates.Student_id, studentFieldTemplates.Field_Name, studentFieldTemplates.Mark);
         }
 
         public void DeleteMark(StudentFieldTemplates studentFieldTemplates)
         {
+            if (_role == "junior")
+            {
+                Log.Information("junchik попытался взять данные");
+                return;
+            }
             _crudManager.DeleteMark(studentFieldTemplates.Student_id, studentFieldTemplates.Field_Name);
         }
 
-        public void search(StudentFieldTemplates studentFieldTemplates)
+        public DataTable searchById(StudentFieldTemplates studentFieldTemplates)
         {
-            _crudManager.Search()
+            return _crudManager.Search(studentFieldTemplates.Student_id);
+        }
+
+        public DataTable searchByNames(StudentFieldTemplates studentFieldTemplates)
+        {
+            return _crudManager.Search(studentFieldTemplates.Last_Name, studentFieldTemplates.First_Name);
+        }
+
+        public DataTable searchByFieldAndID(StudentFieldTemplates studentFieldTemplates)
+        {
+            return _crudManager.Search(studentFieldTemplates.Student_id, studentFieldTemplates.Field_Name);
         }
 
 
-        public void GetFullTable()
+        public DataTable GetFullTable()
         {
-
+            return _crudManager.SELECT();
         }
     }
 }

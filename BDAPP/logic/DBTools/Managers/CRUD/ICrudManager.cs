@@ -17,7 +17,7 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
         public bool DeleteMark(int student_id, string field_Name);
         public DataTable Search(int id);
         public DataTable Search(string lastName, string firstName);
-        public DataTable Search(string fieldName);
+        public DataTable Search(int id, string fieldName);
         public DataTable SELECT();
     }
 }

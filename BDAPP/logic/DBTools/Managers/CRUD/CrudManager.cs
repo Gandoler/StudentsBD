@@ -204,19 +204,20 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
             return dataTable;
         }
 
-        public DataTable Search(string fieldName)
+        public DataTable Search(int id,string fieldName)
         {
             string query = @"
                 SELECT s.student_id, s.students_group_number, s.last_name, s.first_name, f.field_name, fc.mark
                 FROM students s
                 JOIN field_comprehensions fc ON s.student_id = fc.student_id
                 JOIN fields f ON fc.field = f.field_id
-                WHERE f.field_name = @fieldName";
+                WHERE f.field_name = @fieldName AND  s.student_id = @id";
 
             DataTable dataTable = new DataTable();
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
             {
                 command.Parameters.AddWithValue("@fieldName", fieldName);
+                command.Parameters.AddWithValue("@id", id);
 
                 try
                 {
