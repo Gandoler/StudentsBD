@@ -33,5 +33,6 @@ namespace BDAPP.appui.MainPage.View
         public void MakeExitButtonForeRed();
 
         public void UpdateTable(DataTable students_List);
+        void clear();
     }
 }

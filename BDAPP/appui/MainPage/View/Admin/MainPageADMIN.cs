@@ -39,7 +39,7 @@ namespace BDAPP.appui.MainPage.View.Admin
         private void Search_Button_Click(object? sender, EventArgs e)
         {
             
-            if (int.TryParse(ID_TEXTBOX.Text, out int studentId) && studentId != 0)
+            if (int.TryParse(Idtextbox.Text, out int studentId) && studentId != 0)
             {
                
                 SearchButtonByIDClick?.Invoke(new StudentFieldTemplates(studentId));
@@ -103,6 +103,13 @@ namespace BDAPP.appui.MainPage.View.Admin
 
         }
 
-       
+       public void clear()
+        {
+            Idtextbox.Clear();
+            NameTextBox.Clear();
+            LastNameTEXTBOX.Clear();
+            guna2TextBox2.Clear();
+
+        }
     }
 }

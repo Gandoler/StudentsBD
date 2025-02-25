@@ -20,6 +20,7 @@ namespace BDAPP.appui.MainPage.View.RegularUser
 
             // seacrh buuton
             Search_Button.Click += Search_Button_Click;
+            ClearSearch_button.Click += (s, e) => ClearSearchButtonClick?.Invoke();
 
             //appStart
             this.MouseEnter += (s, e) => AppstartMouseEnter?.Invoke();
@@ -77,7 +78,11 @@ namespace BDAPP.appui.MainPage.View.RegularUser
 
         }
 
-
-
+        public void clear()
+        {
+            GroupTExtBox.Clear();
+            LastNameTEXTBOX?.Clear();
+            NameTextBox?.Clear();
+        }
     }
 }
