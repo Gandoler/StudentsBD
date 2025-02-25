@@ -38,12 +38,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             ExitButton = new Guna.UI2.WinForms.Guna2CircleButton();
             panel4 = new Panel();
@@ -54,15 +48,11 @@
             npgsqlDataAdapter2 = new Npgsql.NpgsqlDataAdapter();
             mainPanel = new Panel();
             Search_Button = new Guna.UI2.WinForms.Guna2Button();
-            label3 = new Label();
             GroupTExtBox = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
             NameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
-            Delete_Button = new Guna.UI2.WinForms.Guna2Button();
-            Update_Button = new Guna.UI2.WinForms.Guna2Button();
             LastNameTEXTBOX = new Guna.UI2.WinForms.Guna2TextBox();
-            Add_Button = new Guna.UI2.WinForms.Guna2Button();
             LastNamelavel = new Label();
             DateTable = new DataGridView();
             Student_id = new DataGridViewTextBoxColumn();
@@ -162,15 +152,11 @@
             // mainPanel
             // 
             mainPanel.Controls.Add(Search_Button);
-            mainPanel.Controls.Add(label3);
             mainPanel.Controls.Add(GroupTExtBox);
             mainPanel.Controls.Add(label2);
             mainPanel.Controls.Add(NameTextBox);
             mainPanel.Controls.Add(label1);
-            mainPanel.Controls.Add(Delete_Button);
-            mainPanel.Controls.Add(Update_Button);
             mainPanel.Controls.Add(LastNameTEXTBOX);
-            mainPanel.Controls.Add(Add_Button);
             mainPanel.Controls.Add(LastNamelavel);
             mainPanel.Controls.Add(DateTable);
             mainPanel.Location = new Point(0, 33);
@@ -198,17 +184,6 @@
             Search_Button.TabIndex = 19;
             Search_Button.Text = "Удалить";
             Search_Button.Visible = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label3.Location = new Point(31, 345);
-            label3.Name = "label3";
-            label3.Size = new Size(139, 18);
-            label3.TabIndex = 18;
-            label3.Text = "ADMIN CONSOLE";
-            label3.Visible = false;
             // 
             // GroupTExtBox
             // 
@@ -276,50 +251,10 @@
             label1.Text = "имя";
             label1.Visible = false;
             // 
-            // Delete_Button
-            // 
-            Delete_Button.BorderRadius = 15;
-            Delete_Button.CustomizableEdges = customizableEdges8;
-            Delete_Button.DisabledState.BorderColor = Color.DarkGray;
-            Delete_Button.DisabledState.CustomBorderColor = Color.DarkGray;
-            Delete_Button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Delete_Button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Delete_Button.FillColor = Color.LightBlue;
-            Delete_Button.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            Delete_Button.ForeColor = Color.Black;
-            Delete_Button.Location = new Point(532, 328);
-            Delete_Button.Margin = new Padding(3, 2, 3, 2);
-            Delete_Button.Name = "Delete_Button";
-            Delete_Button.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            Delete_Button.Size = new Size(153, 46);
-            Delete_Button.TabIndex = 13;
-            Delete_Button.Text = "Удалить";
-            Delete_Button.Visible = false;
-            // 
-            // Update_Button
-            // 
-            Update_Button.BorderRadius = 15;
-            Update_Button.CustomizableEdges = customizableEdges10;
-            Update_Button.DisabledState.BorderColor = Color.DarkGray;
-            Update_Button.DisabledState.CustomBorderColor = Color.DarkGray;
-            Update_Button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Update_Button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Update_Button.FillColor = Color.LightBlue;
-            Update_Button.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            Update_Button.ForeColor = Color.Black;
-            Update_Button.Location = new Point(373, 328);
-            Update_Button.Margin = new Padding(3, 2, 3, 2);
-            Update_Button.Name = "Update_Button";
-            Update_Button.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            Update_Button.Size = new Size(153, 46);
-            Update_Button.TabIndex = 12;
-            Update_Button.Text = "Обновить";
-            Update_Button.Visible = false;
-            // 
             // LastNameTEXTBOX
             // 
             LastNameTEXTBOX.BorderRadius = 15;
-            LastNameTEXTBOX.CustomizableEdges = customizableEdges12;
+            LastNameTEXTBOX.CustomizableEdges = customizableEdges8;
             LastNameTEXTBOX.DefaultText = "";
             LastNameTEXTBOX.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             LastNameTEXTBOX.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -333,30 +268,10 @@
             LastNameTEXTBOX.Name = "LastNameTEXTBOX";
             LastNameTEXTBOX.PlaceholderText = "";
             LastNameTEXTBOX.SelectedText = "";
-            LastNameTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            LastNameTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges9;
             LastNameTEXTBOX.Size = new Size(181, 35);
             LastNameTEXTBOX.TabIndex = 9;
             LastNameTEXTBOX.Visible = false;
-            // 
-            // Add_Button
-            // 
-            Add_Button.BorderRadius = 15;
-            Add_Button.CustomizableEdges = customizableEdges14;
-            Add_Button.DisabledState.BorderColor = Color.DarkGray;
-            Add_Button.DisabledState.CustomBorderColor = Color.DarkGray;
-            Add_Button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            Add_Button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Add_Button.FillColor = Color.LightBlue;
-            Add_Button.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            Add_Button.ForeColor = Color.Black;
-            Add_Button.Location = new Point(214, 328);
-            Add_Button.Margin = new Padding(3, 2, 3, 2);
-            Add_Button.Name = "Add_Button";
-            Add_Button.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            Add_Button.Size = new Size(153, 46);
-            Add_Button.TabIndex = 11;
-            Add_Button.Text = "Добавить";
-            Add_Button.Visible = false;
             // 
             // LastNamelavel
             // 
@@ -383,7 +298,7 @@
             DateTable.Name = "DateTable";
             DateTable.RowHeadersVisible = false;
             DateTable.RowHeadersWidth = 51;
-            DateTable.Size = new Size(673, 319);
+            DateTable.Size = new Size(673, 369);
             DateTable.TabIndex = 0;
             DateTable.Visible = false;
             // 
@@ -446,15 +361,11 @@
         private DateTimePicker dateTimePicker1;
         private Label LastNamelavel;
         private Guna.UI2.WinForms.Guna2TextBox LastNameTEXTBOX;
-        private Guna.UI2.WinForms.Guna2Button Delete_Button;
-        private Guna.UI2.WinForms.Guna2Button Update_Button;
-        private Guna.UI2.WinForms.Guna2Button Add_Button;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButton;
         private Guna.UI2.WinForms.Guna2TextBox GroupTExtBox;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox NameTextBox;
         private Label label1;
-        private Label label3;
         private Guna.UI2.WinForms.Guna2Button Search_Button;
         private DataGridViewTextBoxColumn Student_id;
         private DataGridViewTextBoxColumn last_name;
