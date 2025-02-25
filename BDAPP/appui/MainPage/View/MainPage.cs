@@ -19,21 +19,19 @@ namespace OTSC.MainPage.MainView
         {
 
             InitializeComponent();
-            btn_Close.Click += (s, e) => btnClose?.Invoke(this, EventArgs.Empty);
-            btn_profile.Click += (s, e) => btnProfile?.Invoke(this, EventArgs.Empty);
-            btn_generator.Click += (s, e) => btnToGenerate?.Invoke(this, EventArgs.Empty);
-            btn_ezhednevnik.Click += (s, e) => btnToEzhednevnik?.Invoke(this, EventArgs.Empty);
-            Add_Button.Click += (s, e) => btnAdd?.Invoke(this, EventArgs.Empty);
+
+            // Exit button
+            ExitButton.Click += (s, e) => ExitButtonClick?.Invoke();
+            ExitButton.MouseEnter += (s, e) => ExitButtonEntered?.Invoke();
+            ExitButton.MouseLeave += (s, e) => ExitButtonLeavd?.Invoke();
+
+            // Admin buttons 
+            Add_Button.Click += (s, e) => btnAdd?.Invoke();
             Delete_Button.Click += (s, e) => btnDelete?.Invoke(this, EventArgs.Empty);
             Update_Button.Click += (s, e) => btnUpdate?.Invoke(DateTable, EventArgs.Empty);
-            ClearBtn.Click += (s, e) => btnClear?.Invoke(this, EventArgs.Empty);
-            DateTable.SelectionChanged += (s, e) => cellStr?.Invoke(DateTable, e);
         }
 
-        public string friendName { get => LastNameTEXTBOX.Text; set => LastNameTEXTBOX.Text = value; }
-        public string interested { get => txt_interes.Text; set => txt_interes.Text = value; }
-        public DateTime selectedTime { get => date_picker.Value; set => date_picker.Value = value; }
-
+      
         public event EventHandler btnClose;
         public event EventHandler btnToGenerate;
         public event EventHandler btnToEzhednevnik;
@@ -43,6 +41,24 @@ namespace OTSC.MainPage.MainView
         public event EventHandler btnUpdate;
         public event EventHandler btnDelete;
         public event EventHandler cellStr;
+
+
+        // Exit button
+        public event Action? ExitButtonClick;
+        public event Action? ExitButtonEntered;
+        public event Action? ExitButtonLeavd;
+
+
+        public void MakeExitButtonForeBlack()
+        {
+            ExitButton.ForeColor = Color.Black;
+        }
+
+        public void MakeExitButtonForeRed()
+        {
+            ExitButton.ForeColor = Color.Red;
+        }
+
 
 
         //переход на страницу профиля
@@ -85,19 +101,6 @@ namespace OTSC.MainPage.MainView
             date_picker.Value = DateTime.Now;
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

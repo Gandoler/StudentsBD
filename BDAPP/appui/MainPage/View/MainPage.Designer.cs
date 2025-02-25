@@ -154,7 +154,6 @@
             mainPanel.Name = "mainPanel";
             mainPanel.Size = new Size(877, 386);
             mainPanel.TabIndex = 23;
-            mainPanel.Paint += mainPanel_Paint;
             // 
             // Delete_Button
             // 
@@ -284,7 +283,6 @@
             ExitButton.Size = new Size(34, 39);
             ExitButton.TabIndex = 20;
             ExitButton.Text = "X";
-            ExitButton.Click += ExitButton_Click;
             // 
             // NameTextBox
             // 
@@ -362,7 +360,6 @@
             label3.TabIndex = 18;
             label3.Text = "ADMIN CONSOLE";
             label3.Visible = false;
-            label3.Click += label3_Click;
             // 
             // Search_Button
             // 
