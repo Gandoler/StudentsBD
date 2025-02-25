@@ -55,7 +55,7 @@ namespace BDAPP.appui.MainPage.View.RegularUser
 
         public void UpdateTable(DataTable students_List)
         {
-            this.DataTable.DataSource = students_List;
+            this.DataTableGRIDView.DataSource = students_List;
 
         }
 

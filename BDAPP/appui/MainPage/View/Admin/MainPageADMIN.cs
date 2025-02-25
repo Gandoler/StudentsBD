@@ -32,7 +32,7 @@ namespace BDAPP.appui.MainPage.View.Admin
 
 
             //appStart
-            this.MouseEnter += (s, e) => AppstartMouseEnter?.Invoke();
+            DataTableGRIDView.MouseClick += (s, e) => AppstartMouseEnter?.Invoke();
         }
 
 
@@ -70,7 +70,7 @@ namespace BDAPP.appui.MainPage.View.Admin
 
         public void UpdateTable(DataTable students_List)
         {
-            DataTable.DataSource = students_List;
+            DataTableGRIDView.DataSource = students_List;
 
         }
 

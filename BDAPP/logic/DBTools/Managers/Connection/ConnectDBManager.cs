@@ -44,14 +44,8 @@ namespace BDAPP.logic.DBTools.Managers.Connection
                 _connection = new NpgsqlConnection(_connectionString);
                 _connection.Open();
 
-                
-                string query = "SET search_path TO STUDENTSNEW";
-                using (var command = new NpgsqlCommand(query, _connection))
-                {
-                    command.ExecuteNonQuery();
-                }
 
-                Log.Information("Connection to PostgreSQL database established.");
+                
             }
             catch (NpgsqlException ex)
             {

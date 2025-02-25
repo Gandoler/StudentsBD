@@ -18,15 +18,16 @@ namespace BDAPP.logic.AppSettingsParse.Templaetes
                 string.IsNullOrWhiteSpace(Password))
             {
                 Log.Information("ServerSettings: now in template:" + ToString());
-                Log.Error("ServerSettings:One or more required fields are missing for the connection string.");
-
+                Log.Error("ServerSettings: One or more required fields are missing for the connection string.");
+                return null;
             }
-
-            return $"Server={Server};Port={Port};Database={Database};User Id={User};Password={Password};";
+            
+            return $"Server={Server};Port={Port};Database={Database};User id={User};Password={Password};";
         }
+
         public override string ToString()
         {
-            return $"{Server?.ToString()}, {Port}, {Database?.ToString()}, {User?.ToString()}, {Password?.ToString()}";
+            return $"Host={Server}, Port={Port}, Database={Database}, Username={User}, Password={Password}";
         }
     }
 }
