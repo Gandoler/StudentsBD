@@ -66,6 +66,7 @@ namespace BDAPP.appui.MainPage
 
         private void _mainPageView_ClearSearchButtonClick()
         {
+            _mainPageView.clear();
             _mainPageView.UpdateTable(_mainPageModel.GetFullTable());
         }
 

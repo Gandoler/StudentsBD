@@ -23,7 +23,7 @@ namespace BDAPP.appui.MainPage.View.RegularUser
             ClearSearch_button.Click += (s, e) => ClearSearchButtonClick?.Invoke();
 
             //appStart
-            this.MouseEnter += (s, e) => AppstartMouseEnter?.Invoke();
+            DataTableGRIDView.MouseClick += (s, e) => AppstartMouseEnter?.Invoke();
 
         }
 

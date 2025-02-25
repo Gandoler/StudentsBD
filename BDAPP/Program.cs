@@ -43,9 +43,10 @@ namespace BDAPP
             ConnectDBManager connectDBManager = new(connectionString);
             CrudManager crudManager = new(connectDBManager);
             MainPageModel mainPageModel = new MainPageModel(crudManager, Role.admin);
-            PresenterMain presenter = new PresenterMain(admin, mainPageModel);
 
-            Application.Run(admin);
+            PresenterMain presenter = new PresenterMain(mainPageRU, mainPageModel);
+
+            Application.Run(mainPageRU);
 
 
 
