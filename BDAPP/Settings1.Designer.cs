@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BDAPP.Propirties {
+namespace BDAPP {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,13 +25,14 @@ namespace BDAPP.Propirties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Filepath {
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\glkru\\source\\repos\\BDAPP\\BDAPP\\logic\\AppSettingsParse\\RealSAppSettimgs.j" +
+            "son")]
+        public string filepath {
             get {
-                return ((string)(this["Filepath"]));
+                return ((string)(this["filepath"]));
             }
             set {
-                this["Filepath"] = value;
+                this["filepath"] = value;
             }
         }
     }

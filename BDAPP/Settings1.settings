@@ -2,8 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BDAPP" GeneratedClassName="Settings1">
   <Profiles />
   <Settings>
-    <Setting Name="Filepath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="filepath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\glkru\source\repos\BDAPP\BDAPP\logic\AppSettingsParse\RealSAppSettimgs.json</Value>
     </Setting>
   </Settings>
 </SettingsFile>

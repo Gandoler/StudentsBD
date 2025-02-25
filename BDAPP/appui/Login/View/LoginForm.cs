@@ -20,13 +20,13 @@ namespace calculator_winforms.AppLogic.Login.View
         }
 
         // Exit button
-        public event Action ExitButtonClick;
-        public event Action ExitButtonEntered;
-        public event Action ExitButtonLeavd;
+        public event Action? ExitButtonClick;
+        public event Action? ExitButtonEntered;
+        public event Action? ExitButtonLeavd;
 
        
         // Login button
-        public event EventHandler<(string, string)>  LoginButtonClick;
+        public event EventHandler<(string, string)>?  LoginButtonClick;
 
       
 

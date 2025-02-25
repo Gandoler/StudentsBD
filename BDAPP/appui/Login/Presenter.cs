@@ -42,17 +42,19 @@ namespace BDAPP.appui.Login
 
         }
 
+       
+
         private void Imodelka_LoginGo(bool obj)
         {
             throw new NotImplementedException();
         }
 
-        private void Imodelka_LoginFailed(object sender, string e)
+        private void Imodelka_LoginFailed(object? sender, string e)
         {
             MessageBox.Show("Unexpected Error", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void LoginView_LoginButtonClick(object sender, (string, string) e)
+        private void LoginView_LoginButtonClick(object? sender, (string, string) e)
         {
             _imodelka.LogInApl(e.Item1,e.Item2);
         }
