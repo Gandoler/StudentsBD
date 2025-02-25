@@ -22,6 +22,46 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
         }
 
 
+        #region adminmoget
+        public bool UpdateMark(int student_id, string field_Name, int newMark)
+        {
+            string query = @"
+                    UPDATE field_comprehensions 
+                    SET mark = @newMark
+                    WHERE student_id = @studentId AND field = FIELDID_BY_Name(@field)
+                    RETURNING field_comprehensions_id";
+
+            var parameters = new[]
+                    {
+                new NpgsqlParameter("@studentId", NpgsqlTypes.NpgsqlDbType.Integer) { Value = student_id },
+                new NpgsqlParameter("@field", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = field_Name },
+                new NpgsqlParameter("@newMark", NpgsqlTypes.NpgsqlDbType.Integer) { Value = newMark }
+            };
+
+            using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
+            {
+                command.Parameters.AddRange(parameters);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (NpgsqlException ex)
+                {
+                    Log.Error($"Error in query update {student_id}, {field_Name}, {newMark}: {ex.Message}");
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error in query update {student_id}, {field_Name}, {newMark}: {ex.Message}");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
 
         public bool AddMark(int student_id, string field_Name, int mark)
         {
@@ -66,7 +106,44 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
             return true;
         }
 
+        public bool DeleteMark(int student_id, string field_Name)
+        {
+            string query = @"
+            DELETE FROM field_comprehensions 
+            WHERE student_id = @studentId AND field = FIELDID_BY_Name(@field)";
 
+            var parameters = new[]
+            {
+                new NpgsqlParameter("@studentId", NpgsqlTypes.NpgsqlDbType.Integer) { Value = student_id },
+                new NpgsqlParameter("@field", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = field_Name }
+            };
+
+            using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
+            {
+                command.Parameters.AddRange(parameters);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (NpgsqlException ex)
+                {
+                    Log.Error($"Error in query delete {student_id}, {field_Name}: {ex.Message}");
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"Error in query delete {student_id}, {field_Name}: {ex.Message}");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        #endregion
+
+        #region search
 
         public DataTable Search(int id)
         {
@@ -98,8 +175,68 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
             return dataTable;
         }
 
+        public DataTable Search(string lastName, string firstName)
+        {
+            string query = @"
+                SELECT s.student_id, s.students_group_number, s.last_name, s.first_name, f.field_name, fc.mark
+                FROM students s
+                JOIN field_comprehensions fc ON s.student_id = fc.student_id
+                JOIN fields f ON fc.field = f.field_id
+                WHERE s.last_name = @lastName AND s.first_name = @firstName";
 
+            DataTable dataTable = new DataTable();
+            using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
+            {
+                command.Parameters.AddWithValue("@lastName", lastName);
+                command.Parameters.AddWithValue("@firstName", firstName);
 
+                try
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Ошибка при выполнении запроса: " + ex.Message);
+                }
+            }
+
+            return dataTable;
+        }
+
+        public DataTable Search(string fieldName)
+        {
+            string query = @"
+                SELECT s.student_id, s.students_group_number, s.last_name, s.first_name, f.field_name, fc.mark
+                FROM students s
+                JOIN field_comprehensions fc ON s.student_id = fc.student_id
+                JOIN fields f ON fc.field = f.field_id
+                WHERE f.field_name = @fieldName";
+
+            DataTable dataTable = new DataTable();
+            using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
+            {
+                command.Parameters.AddWithValue("@fieldName", fieldName);
+
+                try
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Ошибка при выполнении запроса: " + ex.Message);
+                }
+            }
+
+            return dataTable;
+        }
+
+        #endregion
 
         public DataTable SELECT()
         {
