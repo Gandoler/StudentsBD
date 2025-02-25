@@ -21,7 +21,14 @@ namespace BDAPP.appui.MainPage.View.Admin
             // seacrh buuton
             Search_Button.Click += (s, e) => SearchButtonClick?.Invoke(new StudentFieldTemplates(LastNameTEXTBOX.Text,
                                                                                                 NameTextBox.Text, GroupTExtBox.Text));
-            MouseEnter += (s, e) => MouseEnterUpdate?.Invoke();
+
+
+
+            // ADmin buttons
+            ADD_button.Click += (s, e) => AddButtonClick?.Invoke(new StudentFieldTemplates(ID_TEXTBOX.Text, Field_nameTEXTBOX.Text, MarkTEXTBOX.Text));
+            UPD_button.Click += (s, e) => AddButtonClick?.Invoke(new StudentFieldTemplates(ID_TEXTBOX.Text, Field_nameTEXTBOX.Text, MarkTEXTBOX.Text));
+
+            DEL_button.Click += (s, e) => AddButtonClick?.Invoke(new StudentFieldTemplates(ID_TEXTBOX.Text, Field_nameTEXTBOX.Text, MarkTEXTBOX.Text));
 
         }
 
@@ -38,8 +45,14 @@ namespace BDAPP.appui.MainPage.View.Admin
         public event Action<StudentFieldTemplates>? SearchButtonClick;
 
 
-        // for init
-        public event Action? MouseEnterUpdate;
+        // clear search 
+        public event Action<StudentFieldTemplates>? ClearSearchButtonClick;
+
+
+        // ADmin buttons
+        public event Action<StudentFieldTemplates>? AddButtonClick;
+        public event Action<StudentFieldTemplates>? DELButtonClick;
+        public event Action<StudentFieldTemplates>? UPDButtonClick;
 
         public void MakeExitButtonForeBlack()
         {
