@@ -44,9 +44,10 @@ namespace BDAPP.appui.MainPage.View.RegularUser
 
         // seacrh buuton
         public event Action<StudentFieldTemplates>? SearchButtonClick;
-
-
-       
+        public event Action? ClearSearchButtonClick;
+        public event Action<StudentFieldTemplates>? AddButtonClick;
+        public event Action<StudentFieldTemplates>? DELButtonClick;
+        public event Action<StudentFieldTemplates>? UPDButtonClick;
 
         public void MakeExitButtonForeBlack()
         {

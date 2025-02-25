@@ -19,7 +19,7 @@ namespace BDAPP.appui.MainPage.View
         public event Action<StudentFieldTemplates>? SearchButtonClick;
 
         // clear search 
-        public event Action<StudentFieldTemplates>? ClearSearchButtonClick;
+        public event Action? ClearSearchButtonClick;
 
 
         // ADmin buttons
