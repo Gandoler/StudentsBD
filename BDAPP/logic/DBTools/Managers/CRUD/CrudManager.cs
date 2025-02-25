@@ -8,7 +8,7 @@ using System.Data;
 
 namespace BDAPP.logic.DBTools.Managers.CRUD
 {
-    class CrudManager
+    class CrudManager : ICrudManager
     {
 
         private readonly IConnectManager _connectManager;

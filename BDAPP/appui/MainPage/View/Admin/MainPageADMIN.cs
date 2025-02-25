@@ -22,7 +22,7 @@ namespace BDAPP.appui.MainPage.View.Admin
             Search_Button.Click += (s, e) => SearchButtonClick?.Invoke(new StudentFieldTemplates(LastNameTEXTBOX.Text,
                                                                                                 NameTextBox.Text, GroupTExtBox.Text));
 
-
+            // Clear Sea
 
             // ADmin buttons
             ADD_button.Click += (s, e) => AddButtonClick?.Invoke(new StudentFieldTemplates(ID_TEXTBOX.Text, Field_nameTEXTBOX.Text, MarkTEXTBOX.Text));
