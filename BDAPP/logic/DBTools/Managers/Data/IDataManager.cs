@@ -1,5 +1,4 @@
-﻿using BDAPP.logic.DBTools.Connection;
-using BDAPP.logic.DBTools.Operations;
+﻿using BDAPP.logic.DBTools.Operations;
 using System;
 using System.Collections.Generic;
 using System.Data;
