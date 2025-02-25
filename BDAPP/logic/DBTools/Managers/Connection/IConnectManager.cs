@@ -1,7 +1,7 @@
 ﻿using Npgsql;
 
 
-namespace BDAPP.logic.DBTools.Connection
+namespace BDAPP.logic.DBTools.Managers.Connection
 {
     internal interface IConnectManager
     {

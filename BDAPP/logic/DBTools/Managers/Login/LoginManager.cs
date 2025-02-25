@@ -1,4 +1,4 @@
-﻿using BDAPP.logic.DBTools.Connection;
+﻿using BDAPP.logic.DBTools.Managers.Connection;
 using Npgsql;
 using Serilog;
 

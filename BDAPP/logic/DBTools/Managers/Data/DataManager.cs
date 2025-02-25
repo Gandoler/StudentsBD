@@ -1,11 +1,11 @@
-﻿using BDAPP.logic.DBTools.Connection;
+﻿using BDAPP.logic.DBTools.Managers.Connection;
 using BDAPP.logic.DBTools.Operations;
 using System.Data;
 
 
-namespace BDAPP.logic.DBTools.Managers
+namespace BDAPP.logic.DBTools.Managers.Data
 {
-    internal class DataManager
+    internal class DataManager: IDataManager
     {
         private readonly IConnectManager _connectManager;
         private readonly ISqlOperation _sqlOperation;

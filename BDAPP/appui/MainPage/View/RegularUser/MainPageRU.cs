@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace BDAPP.appui.MainPage.View.RegularUser
 {
-    public partial class MainPageRU : Form, IMainPageViewRu
+    public partial class MainPageRU : Form, IMainPageView
     {
 
 

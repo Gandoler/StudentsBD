@@ -2,7 +2,7 @@
 using Serilog;
 using System.Data;
 
-namespace BDAPP.logic.DBTools.Connection
+namespace BDAPP.logic.DBTools.Managers.Connection
 {
     internal class ConnectDBManager : IConnectManager
     {

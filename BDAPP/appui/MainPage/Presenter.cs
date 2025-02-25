@@ -11,53 +11,38 @@ namespace BDAPP.appui.MainPage
 { 
     class Presenter
     {
-        private readonly IMainPageAdminVeiw _mainPageAdminVeiw;
-        private readonly IMainPageViewRu _mainPageViewRu;
+        
+        private readonly IMainPageView _mainPageView;
 
 
 
-        public Presenter(IMainPageAdminVeiw mainPageAdminVeiw, IMainPageViewRu mainPageViewRu)
+        public Presenter(IMainPageView mainPageViewRu)
         {
-            _mainPageAdminVeiw = mainPageAdminVeiw;
-            _mainPageViewRu = mainPageViewRu;
+            
+            _mainPageView = mainPageViewRu;
 
-
-            #region RegularUser init
             //exit button
-            _mainPageViewRu.ExitButtonEntered += () => _mainPageViewRu.MakeExitButtonForeRed();
-            _mainPageViewRu.ExitButtonLeavd += () => _mainPageViewRu.MakeExitButtonForeBlack();
-            _mainPageViewRu.ExitButtonClick += EXITFUNC;
-
-
-            #endregion
-
-
-            #region adminpage init
-            //exit button
-            _mainPageAdminVeiw.ExitButtonEntered += () => _mainPageAdminVeiw.MakeExitButtonForeRed();
-            _mainPageAdminVeiw.ExitButtonLeavd += () => _mainPageAdminVeiw.MakeExitButtonForeBlack();
-            _mainPageAdminVeiw.ExitButtonClick += EXITFUNC;
+            _mainPageView.ExitButtonEntered += () => _mainPageView.MakeExitButtonForeRed();
+            _mainPageView.ExitButtonLeavd += () => _mainPageView.MakeExitButtonForeBlack();
+            _mainPageView.ExitButtonClick += EXITFUNC;
 
             // admin buttons
-            _mainPageAdminVeiw.AddButtonClick += _mainPageAdminVeiw_AddButtonClick;
-            _mainPageAdminVeiw.UPDButtonClick += _mainPageAdminVeiw_UPDButtonClick;
-            _mainPageAdminVeiw.DELButtonClick += _mainPageAdminVeiw_DELButtonClick;
+            _mainPageView.AddButtonClick += _mainPageAdminVeiw_AddButtonClick;
+            _mainPageView.UPDButtonClick += _mainPageAdminVeiw_UPDButtonClick;
+            _mainPageView.DELButtonClick += _mainPageAdminVeiw_DELButtonClick;
 
             //search and Unsearch
             //_mainPageAdminVeiw.SearchButtonClick+=
             //_mainPageAdminVeiw.ClearSearchButtonClick+=
 
-            #endregion
+        
         }
 
         private void EXITFUNC()
         {
             Application.Exit();
         }
-
-
-
-        #region adminpage 
+      
         private void _mainPageAdminVeiw_DELButtonClick(StudentFieldTemplates obj)
         {
             throw new NotImplementedException();
@@ -72,6 +57,6 @@ namespace BDAPP.appui.MainPage
         {
             throw new NotImplementedException();
         }
-        #endregion
+       
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BDAPP.appui.MainPage.View
 {
-    interface IMainPageViewRu
+    interface IMainPageView
     {
         public event Action? ExitButtonClick;
         public event Action? ExitButtonEntered;
@@ -18,7 +18,14 @@ namespace BDAPP.appui.MainPage.View
         // seacrh buuton
         public event Action<StudentFieldTemplates>? SearchButtonClick;
 
+        // clear search 
+        public event Action<StudentFieldTemplates>? ClearSearchButtonClick;
 
+
+        // ADmin buttons
+        public event Action<StudentFieldTemplates>? AddButtonClick;
+        public event Action<StudentFieldTemplates>? DELButtonClick;
+        public event Action<StudentFieldTemplates>? UPDButtonClick;
 
         public void MakeExitButtonForeBlack();
         public void MakeExitButtonForeRed();
