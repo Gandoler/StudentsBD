@@ -26,10 +26,10 @@ namespace BDAPP.appui.MainPage.View.Admin
             ClearSearch_button.Click += (s, e) => ClearSearchButtonClick?.Invoke();
 
             // ADmin buttons
-            ADD_button.Click += (s, e) => AddButtonClick?.Invoke(new StudentFieldTemplates(ID_TEXTBOX.Text, Field_nameTEXTBOX.Text, MarkTEXTBOX.Text));
-            UPD_button.Click += (s, e) => UPDButtonClick?.Invoke(new StudentFieldTemplates(ID_TEXTBOX.Text, Field_nameTEXTBOX.Text, MarkTEXTBOX.Text));
+            ADD_button.Click += (s, e) => AddButtonClick?.Invoke(new StudentFieldTemplates(int.Parse(ID_TEXTBOX.Text), Field_nameTEXTBOX.Text, int.Parse(MarkTEXTBOX.Text)));
+            UPD_button.Click += (s, e) => UPDButtonClick?.Invoke(new StudentFieldTemplates(int.Parse(ID_TEXTBOX.Text), Field_nameTEXTBOX.Text, int.Parse(MarkTEXTBOX.Text)));
 
-            DEL_button.Click += (s, e) => DELButtonClick?.Invoke(new StudentFieldTemplates(ID_TEXTBOX.Text, Field_nameTEXTBOX.Text, MarkTEXTBOX.Text));
+            DEL_button.Click += (s, e) => DELButtonClick?.Invoke(new StudentFieldTemplates(int.Parse(ID_TEXTBOX.Text), Field_nameTEXTBOX.Text, int.Parse(MarkTEXTBOX.Text)));
 
 
             //appStart

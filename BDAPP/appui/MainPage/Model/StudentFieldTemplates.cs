@@ -39,6 +39,7 @@ namespace BDAPP.appui.MainPage.Model
             _student_Group_Number = student_Group_Number;
         }
 
+   
 
         public StudentFieldTemplates(string last_Name, string first_Name)
         {

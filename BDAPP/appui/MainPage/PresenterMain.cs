@@ -83,7 +83,7 @@ namespace BDAPP.appui.MainPage
 
             if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name))
             {
-                MessageBox.Show("Ошибка: не все обязательные поля заполнены.");
+                MessageBox.Show("Ошибка: не все обязательные поля заполнены ID и Предмет.");
                 return;
             }
 
@@ -101,8 +101,16 @@ namespace BDAPP.appui.MainPage
 
             if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name) || obj.Mark == 0)
             {
-                MessageBox.Show("Ошибка: не все обязательные поля заполнены.");
-                return;
+                if (obj.Mark == 0)
+                { 
+                    MessageBox.Show("Ошибка:Оценка ");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка: не все обязательные поля заполнены ID и Предмет.");
+                    return;
+                }
             }
 
             _mainPageModel.UpdateMark(obj);
@@ -119,7 +127,7 @@ namespace BDAPP.appui.MainPage
 
             if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name) || obj.Mark == 0)
             {
-                MessageBox.Show("Ошибка: не все обязательные поля заполнены.");
+                MessageBox.Show("Ошибка: не все обязательные поля заполнены ID, Оценка и Предмет.");
                 return;
             }
 
