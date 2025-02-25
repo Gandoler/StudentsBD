@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 
 namespace BDAPP.appui.MainPage
 { 
-    class Presenter
+    class PresenterMain
     {
+
         
         private readonly IMainPageView _mainPageView;
+        private readonly IMainPageModel _mainPageModel;
 
 
-
-        public Presenter(IMainPageView mainPageViewRu)
+        public PresenterMain(IMainPageView mainPageViewRu, IMainPageModel mainPageModel)
         {
-            
+            _mainPageModel = mainPageModel;
             _mainPageView = mainPageViewRu;
 
             //exit button
@@ -32,16 +33,29 @@ namespace BDAPP.appui.MainPage
             _mainPageView.DELButtonClick += _mainPageAdminVeiw_DELButtonClick;
 
             //search and Unsearch
-            //_mainPageAdminVeiw.SearchButtonClick+=
-            //_mainPageAdminVeiw.ClearSearchButtonClick+=
+            _mainPageView.SearchButtonClick += _mainPageView_SearchButtonClick;
+            _mainPageView.ClearSearchButtonClick += _mainPageView_ClearSearchButtonClick;
 
-        
+            //inittable 
+            _mainPageView.AppstartMouseEnter += _mainPageView_AppstartMouseEnter;
+
         }
 
-        private void EXITFUNC()
+        private void _mainPageView_AppstartMouseEnter()
         {
-            Application.Exit();
+            _mainPageView.UpdateTable(_mainPageModel.GetFullTable());
         }
+
+        private void _mainPageView_ClearSearchButtonClick()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void _mainPageView_SearchButtonClick(StudentFieldTemplates obj)
+        {
+            throw new NotImplementedException();
+        }
+
       
         private void _mainPageAdminVeiw_DELButtonClick(StudentFieldTemplates obj)
         {
@@ -56,6 +70,10 @@ namespace BDAPP.appui.MainPage
         private void _mainPageAdminVeiw_AddButtonClick(StudentFieldTemplates obj)
         {
             throw new NotImplementedException();
+        }
+        private void EXITFUNC()
+        {
+            Application.Exit();
         }
        
     }

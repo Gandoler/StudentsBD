@@ -1,4 +1,11 @@
+using BDAPP.appui.Login;
+using BDAPP.appui.MainPage;
+using BDAPP.appui.MainPage.Model;
 using BDAPP.appui.MainPage.View.RegularUser;
+using BDAPP.logic;
+using BDAPP.logic.AppSettingsParse.ConectionStringManager;
+using BDAPP.logic.DBTools.Managers.Connection;
+using BDAPP.logic.DBTools.Managers.CRUD;
 using Serilog;
 using System.Diagnostics;
 
@@ -22,6 +29,16 @@ namespace BDAPP
 
             Log.Information("App start");
             MainPageRU mainPageRU = new MainPageRU();
+            string? connectionString;
+            do
+            {
+                connectionString = ConnectionStringManager.GetConnectionString();
+            } while (connectionString == null);
+
+            ConnectDBManager connectDBManager = new(connectionString);
+            CrudManager crudManager = new(connectDBManager);
+            MainPageModel mainPageModel = new MainPageModel(crudManager, Role.admin);
+            PresenterMain presenter = new PresenterMain(mainPageRU, mainPageModel);
 
             Application.Run(mainPageRU);
         }

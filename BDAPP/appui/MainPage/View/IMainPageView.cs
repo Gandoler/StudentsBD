@@ -13,7 +13,7 @@ namespace BDAPP.appui.MainPage.View
         public event Action? ExitButtonClick;
         public event Action? ExitButtonEntered;
         public event Action? ExitButtonLeavd;
-
+        public event Action? AppstartMouseEnter;
 
         // seacrh buuton
         public event Action<StudentFieldTemplates>? SearchButtonClick;
@@ -30,6 +30,6 @@ namespace BDAPP.appui.MainPage.View
         public void MakeExitButtonForeBlack();
         public void MakeExitButtonForeRed();
 
-        public void UpdateTable(List<StudentFieldTemplates> students_List);
+        public void UpdateTable(DataTable students_List);
     }
 }

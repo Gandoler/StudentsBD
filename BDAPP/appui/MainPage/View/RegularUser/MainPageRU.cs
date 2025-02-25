@@ -1,4 +1,5 @@
 ﻿using BDAPP.appui.MainPage.Model;
+using System.Data;
 #pragma warning disable CS0067
 
 namespace BDAPP.appui.MainPage.View.RegularUser
@@ -20,8 +21,10 @@ namespace BDAPP.appui.MainPage.View.RegularUser
             // seacrh buuton
             Search_Button.Click += (s, e) => SearchButtonClick?.Invoke(new StudentFieldTemplates(LastNameTEXTBOX.Text,
                                                                                                 NameTextBox.Text, GroupTExtBox.Text));
-      
-            
+
+            //appStart
+            this.MouseEnter += (s, e) => AppstartMouseEnter?.Invoke();
+
         }
 
 
@@ -39,7 +42,7 @@ namespace BDAPP.appui.MainPage.View.RegularUser
         public event Action<StudentFieldTemplates>? AddButtonClick;
         public event Action<StudentFieldTemplates>? DELButtonClick;
         public event Action<StudentFieldTemplates>? UPDButtonClick;
-
+        public event Action? AppstartMouseEnter;
         public void MakeExitButtonForeBlack()
         {
             ExitButton.ForeColor = Color.Black;
@@ -50,19 +53,9 @@ namespace BDAPP.appui.MainPage.View.RegularUser
             ExitButton.ForeColor = Color.Red;
         }
 
-        public void UpdateTable(List<StudentFieldTemplates> students_List)
+        public void UpdateTable(DataTable students_List)
         {
-            foreach (var student in students_List)
-            {
-                DataTable.Rows.Add(
-                    student.Student_id,
-                    student.Student_Group_Number,
-                    student.Last_Name,
-                    student.First_Name,
-                    student.Field_Name,
-                    student.Mark
-                );
-            }
+            this.DataTable.DataSource = students_List;
 
         }
 

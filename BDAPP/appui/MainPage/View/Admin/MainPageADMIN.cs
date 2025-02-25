@@ -1,5 +1,4 @@
 ﻿using BDAPP.appui.MainPage.Model;
-using BDAPP.appui.MainPage.View.RegularUser;
 using System.Data;
 
 namespace BDAPP.appui.MainPage.View.Admin
@@ -31,6 +30,9 @@ namespace BDAPP.appui.MainPage.View.Admin
 
             DEL_button.Click += (s, e) => DELButtonClick?.Invoke(new StudentFieldTemplates(ID_TEXTBOX.Text, Field_nameTEXTBOX.Text, MarkTEXTBOX.Text));
 
+
+            //appStart
+            this.MouseEnter += (s, e) => AppstartMouseEnter?.Invoke();
         }
 
 
@@ -54,6 +56,7 @@ namespace BDAPP.appui.MainPage.View.Admin
         public event Action<StudentFieldTemplates>? AddButtonClick;
         public event Action<StudentFieldTemplates>? DELButtonClick;
         public event Action<StudentFieldTemplates>? UPDButtonClick;
+        public event Action? AppstartMouseEnter;
 
         public void MakeExitButtonForeBlack()
         {
@@ -65,19 +68,9 @@ namespace BDAPP.appui.MainPage.View.Admin
             ExitButton.ForeColor = Color.Red;
         }
 
-        public void UpdateTable(List<StudentFieldTemplates> students_List)
+        public void UpdateTable(DataTable students_List)
         {
-            foreach (var student in students_List)
-            {
-                DataTable.Rows.Add(
-                    student.Student_id,
-                    student.Student_Group_Number,
-                    student.Last_Name,
-                    student.First_Name,
-                    student.Field_Name,
-                    student.Mark
-                );
-            }
+            DataTable.DataSource = students_List;
 
         }
 

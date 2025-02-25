@@ -1,4 +1,5 @@
-﻿using BDAPP.logic.DBTools.Managers.CRUD;
+﻿using BDAPP.logic;
+using BDAPP.logic.DBTools.Managers.CRUD;
 using Serilog;
 using System.Data;
 
@@ -11,10 +12,10 @@ namespace BDAPP.appui.MainPage.Model
     class MainPageModel: IMainPageModel
     {
 
-        private readonly string _role;
+        private readonly Role _role;
         private readonly ICrudManager _crudManager;
 
-        public MainPageModel(ICrudManager crudManager, string role)
+        public MainPageModel(ICrudManager crudManager, Role role)
         {
             _crudManager = crudManager;
             _role = role;
@@ -22,7 +23,7 @@ namespace BDAPP.appui.MainPage.Model
 
         public void AddMark(StudentFieldTemplates studentFieldTemplates)
         {
-            if (_role == "junior")
+            if (_role == Role.junior)
             {
                 Log.Information("junchik попытался взять данные");
                 return;
@@ -32,7 +33,7 @@ namespace BDAPP.appui.MainPage.Model
 
         public void UpdateMark(StudentFieldTemplates studentFieldTemplates)
         {
-            if (_role == "junior")
+            if (_role == Role.junior)
             {
                 Log.Information("junchik попытался взять данные");
                 return;
@@ -42,7 +43,7 @@ namespace BDAPP.appui.MainPage.Model
 
         public void DeleteMark(StudentFieldTemplates studentFieldTemplates)
         {
-            if (_role == "junior")
+            if (_role == Role.junior)
             {
                 Log.Information("junchik попытался взять данные");
                 return;
