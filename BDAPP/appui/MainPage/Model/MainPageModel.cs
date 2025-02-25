@@ -1,9 +1,4 @@
-﻿using BDAPP.logic.DBTools.Managers.Connection;
-using BDAPP.logic.DBTools.Managers.Data;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
+﻿using BDAPP.logic.DBTools.Managers.CRUD;
 
 
 
@@ -15,49 +10,32 @@ namespace BDAPP.appui.MainPage.Model
     {
 
         private readonly string _role;
-        private readonly IDataManager _dataManager;
+        private readonly ICrudManager _crudManager;
 
-        public MainPageModel(IDataManager dataManager, string role)
+        public MainPageModel(ICrudManager crudManager, string role)
         {
-            _dataManager = dataManager;
+            _crudManager = crudManager;
             _role = role;
         }
 
         public void AddMark(StudentFieldTemplates studentFieldTemplates)
         {
-            if (_role != "admin")
-            {
-                throw new UnauthorizedAccessException("Недостаточно прав.");
-            }
-
-            string query = "" +
-                "" +
-                "" +
-                "INSERT INTO field_comprehensions (student_id, field, mark) VALUES (@studentId, @field, @mark)";
-
-            var parameters = new[]
-            {
-            new SqlParameter("@studentId", SqlDbType.Int) { Value = studentFieldTemplates.Student_id },
-            new SqlParameter("@field", SqlDbType.UniqueIdentifier) { Value = studentFieldTemplates.Field_Name },
-            new SqlParameter("@mark", SqlDbType.Int) { Value = studentFieldTemplates.Mark }
-        };
-
-            _dataManager.ExecuteQuery(query, parameters);
+            _crudManager.AddMark(studentFieldTemplates.Student_id, studentFieldTemplates.Field_Name, studentFieldTemplates.Mark);
         }
 
         public void UpdateMark(StudentFieldTemplates studentFieldTemplates)
         {
-
+            _crudManager.UpdateMark(studentFieldTemplates.Student_id, studentFieldTemplates.Field_Name, studentFieldTemplates.Mark);
         }
 
         public void DeleteMark(StudentFieldTemplates studentFieldTemplates)
         {
-
+            _crudManager.DeleteMark(studentFieldTemplates.Student_id, studentFieldTemplates.Field_Name);
         }
 
         public void search(StudentFieldTemplates studentFieldTemplates)
         {
-
+            _crudManager.Search()
         }
 
 

@@ -1,6 +1,4 @@
 ﻿using BDAPP.logic.DBTools.Managers.Connection;
-using BDAPP.logic.DBTools.Managers.Data;
-using BDAPP.logic.DBTools.Operations;
 using Microsoft.Data.SqlClient;
 using Npgsql;
 using Serilog;
