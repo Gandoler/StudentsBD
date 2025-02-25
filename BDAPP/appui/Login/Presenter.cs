@@ -1,6 +1,5 @@
 ﻿using BDAPP.appui.Login.Model;
 using BDAPP.appui.Login.View;
-using calculator_winforms.AppLogic.MainPage.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;

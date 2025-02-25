@@ -1,6 +1,6 @@
 ﻿namespace OTSC.MainPage.MainView
 {
-    partial class MainPage
+    partial class MainPageAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPageAdmin));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -54,16 +54,17 @@
             label1 = new Label();
             LastNameTEXTBOX = new Guna.UI2.WinForms.Guna2TextBox();
             LastNamelavel = new Label();
-            DateTable = new DataGridView();
+            DataTable = new DataGridView();
             Student_id = new DataGridViewTextBoxColumn();
+            studentGropNumber = new DataGridViewTextBoxColumn();
             last_name = new DataGridViewTextBoxColumn();
             first_Naem = new DataGridViewTextBoxColumn();
             fieled_name = new DataGridViewTextBoxColumn();
-            mark = new DataGridViewTextBoxColumn();
+            st_mark = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DateTable).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataTable).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -158,7 +159,7 @@
             mainPanel.Controls.Add(label1);
             mainPanel.Controls.Add(LastNameTEXTBOX);
             mainPanel.Controls.Add(LastNamelavel);
-            mainPanel.Controls.Add(DateTable);
+            mainPanel.Controls.Add(DataTable);
             mainPanel.Location = new Point(0, 33);
             mainPanel.Margin = new Padding(3, 2, 3, 2);
             mainPanel.Name = "mainPanel";
@@ -182,8 +183,7 @@
             Search_Button.ShadowDecoration.CustomizableEdges = customizableEdges3;
             Search_Button.Size = new Size(153, 46);
             Search_Button.TabIndex = 19;
-            Search_Button.Text = "Удалить";
-            Search_Button.Visible = false;
+            Search_Button.Text = "Поиск";
             // 
             // GroupTExtBox
             // 
@@ -205,7 +205,6 @@
             GroupTExtBox.ShadowDecoration.CustomizableEdges = customizableEdges5;
             GroupTExtBox.Size = new Size(181, 35);
             GroupTExtBox.TabIndex = 17;
-            GroupTExtBox.Visible = false;
             // 
             // label2
             // 
@@ -216,7 +215,6 @@
             label2.Size = new Size(61, 18);
             label2.TabIndex = 16;
             label2.Text = "Группа";
-            label2.Visible = false;
             // 
             // NameTextBox
             // 
@@ -238,7 +236,6 @@
             NameTextBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
             NameTextBox.Size = new Size(181, 35);
             NameTextBox.TabIndex = 15;
-            NameTextBox.Visible = false;
             // 
             // label1
             // 
@@ -249,7 +246,6 @@
             label1.Size = new Size(37, 18);
             label1.TabIndex = 14;
             label1.Text = "имя";
-            label1.Visible = false;
             // 
             // LastNameTEXTBOX
             // 
@@ -271,7 +267,6 @@
             LastNameTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges9;
             LastNameTEXTBOX.Size = new Size(181, 35);
             LastNameTEXTBOX.TabIndex = 9;
-            LastNameTEXTBOX.Visible = false;
             // 
             // LastNamelavel
             // 
@@ -282,52 +277,61 @@
             LastNamelavel.Size = new Size(78, 18);
             LastNamelavel.TabIndex = 2;
             LastNamelavel.Text = "Фамилия";
-            LastNamelavel.Visible = false;
             // 
-            // DateTable
+            // DataTable
             // 
-            DateTable.AllowUserToAddRows = false;
-            DateTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DateTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
-            DateTable.BackgroundColor = Color.WhiteSmoke;
-            DateTable.BorderStyle = BorderStyle.None;
-            DateTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DateTable.Columns.AddRange(new DataGridViewColumn[] { Student_id, last_name, first_Naem, fieled_name, mark });
-            DateTable.Location = new Point(12, 5);
-            DateTable.Margin = new Padding(3, 2, 3, 2);
-            DateTable.Name = "DateTable";
-            DateTable.RowHeadersVisible = false;
-            DateTable.RowHeadersWidth = 51;
-            DateTable.Size = new Size(673, 369);
-            DateTable.TabIndex = 0;
-            DateTable.Visible = false;
+            DataTable.AllowUserToAddRows = false;
+            DataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataTable.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+            DataTable.BackgroundColor = Color.WhiteSmoke;
+            DataTable.BorderStyle = BorderStyle.None;
+            DataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataTable.Columns.AddRange(new DataGridViewColumn[] { Student_id, studentGropNumber, last_name, first_Naem, fieled_name, st_mark });
+            DataTable.Location = new Point(12, 5);
+            DataTable.Margin = new Padding(3, 2, 3, 2);
+            DataTable.Name = "DataTable";
+            DataTable.RowHeadersVisible = false;
+            DataTable.RowHeadersWidth = 51;
+            DataTable.Size = new Size(673, 369);
+            DataTable.TabIndex = 0;
             // 
             // Student_id
             // 
+            Student_id.FillWeight = 152.284286F;
             Student_id.HeaderText = "ID";
+            Student_id.MinimumWidth = 50;
             Student_id.Name = "Student_id";
+            // 
+            // studentGropNumber
+            // 
+            studentGropNumber.FillWeight = 108.400269F;
+            studentGropNumber.HeaderText = "Группа";
+            studentGropNumber.Name = "studentGropNumber";
             // 
             // last_name
             // 
+            last_name.FillWeight = 108.400269F;
             last_name.HeaderText = "Фамилия";
             last_name.Name = "last_name";
             // 
             // first_Naem
             // 
+            first_Naem.FillWeight = 108.400269F;
             first_Naem.HeaderText = "Имя";
             first_Naem.Name = "first_Naem";
             // 
             // fieled_name
             // 
+            fieled_name.FillWeight = 108.400269F;
             fieled_name.HeaderText = "Дисциплина";
             fieled_name.Name = "fieled_name";
             // 
-            // mark
+            // st_mark
             // 
-            mark.HeaderText = "оценка";
-            mark.Name = "mark";
+            st_mark.HeaderText = "оценка";
+            st_mark.Name = "st_mark";
             // 
-            // MainPage
+            // MainPageRU
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -337,14 +341,14 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
-            Name = "MainPage";
+            Name = "MainPageRU";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainPage";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DateTable).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataTable).EndInit();
             ResumeLayout(false);
         }
 
@@ -357,7 +361,7 @@
         private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter1;
         private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter2;
         private Panel mainPanel;
-        private DataGridView DateTable;
+        private DataGridView DataTable;
         private DateTimePicker dateTimePicker1;
         private Label LastNamelavel;
         private Guna.UI2.WinForms.Guna2TextBox LastNameTEXTBOX;
@@ -368,9 +372,10 @@
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button Search_Button;
         private DataGridViewTextBoxColumn Student_id;
+        private DataGridViewTextBoxColumn studentGropNumber;
         private DataGridViewTextBoxColumn last_name;
         private DataGridViewTextBoxColumn first_Naem;
         private DataGridViewTextBoxColumn fieled_name;
-        private DataGridViewTextBoxColumn mark;
+        private DataGridViewTextBoxColumn st_mark;
     }
 }
