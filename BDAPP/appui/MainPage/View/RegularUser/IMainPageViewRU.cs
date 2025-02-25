@@ -19,8 +19,6 @@ namespace BDAPP.appui.MainPage.View.RegularUser
         public event Action<StudentFieldTemplates>? SearchButtonClick;
 
 
-        // for init
-        public event Action? MouseEnterUpdate;
 
         public void MakeExitButtonForeBlack();
         public void MakeExitButtonForeRed();

@@ -30,7 +30,7 @@ namespace OTSC.MainPage.MainView
             // seacrh buuton
             Search_Button.Click += (s, e) => SearchButtonClick?.Invoke(new StudentFieldTemplates(LastNameTEXTBOX.Text,
                                                                                                 NameTextBox.Text, GroupTExtBox.Text));
-            this.MouseEnter += (s, e) => MouseEnterUpdate?.Invoke();
+      
             
         }
 
@@ -47,8 +47,7 @@ namespace OTSC.MainPage.MainView
         public event Action<StudentFieldTemplates>? SearchButtonClick;
 
 
-        // for init
-        public event Action? MouseEnterUpdate;
+       
 
         public void MakeExitButtonForeBlack()
         {

@@ -22,7 +22,7 @@ namespace BDAPP.appui.MainPage.View.Admin
             Search_Button.Click += (s, e) => SearchButtonClick?.Invoke(new StudentFieldTemplates(LastNameTEXTBOX.Text,
                                                                                                 NameTextBox.Text, GroupTExtBox.Text));
             MouseEnter += (s, e) => MouseEnterUpdate?.Invoke();
-            
+
         }
 
 
@@ -67,7 +67,6 @@ namespace BDAPP.appui.MainPage.View.Admin
 
         }
 
-
-
+       
     }
 }

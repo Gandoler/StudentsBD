@@ -28,16 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPageAdmin));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             ExitButton = new Guna.UI2.WinForms.Guna2CircleButton();
             panel4 = new Panel();
@@ -47,9 +57,9 @@
             npgsqlDataAdapter1 = new Npgsql.NpgsqlDataAdapter();
             npgsqlDataAdapter2 = new Npgsql.NpgsqlDataAdapter();
             mainPanel = new Panel();
+            ID_TEXTBOX = new Label();
             Search_Button = new Guna.UI2.WinForms.Guna2Button();
             GroupTExtBox = new Guna.UI2.WinForms.Guna2TextBox();
-            label2 = new Label();
             NameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
             LastNameTEXTBOX = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,6 +71,13 @@
             first_Naem = new DataGridViewTextBoxColumn();
             fieled_name = new DataGridViewTextBoxColumn();
             st_mark = new DataGridViewTextBoxColumn();
+            MarkTEXTBOX = new Guna.UI2.WinForms.Guna2TextBox();
+            label2 = new Label();
+            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            Field_nameTEXTBOX = new Label();
+            UPD_button = new Guna.UI2.WinForms.Guna2Button();
+            DEL_button = new Guna.UI2.WinForms.Guna2Button();
+            ADD_button = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             mainPanel.SuspendLayout();
@@ -94,7 +111,7 @@
             ExitButton.Location = new Point(844, 0);
             ExitButton.Margin = new Padding(4, 3, 4, 3);
             ExitButton.Name = "ExitButton";
-            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            ExitButton.ShadowDecoration.CustomizableEdges = customizableEdges20;
             ExitButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             ExitButton.Size = new Size(34, 39);
             ExitButton.TabIndex = 20;
@@ -152,9 +169,16 @@
             // 
             // mainPanel
             // 
+            mainPanel.Controls.Add(ADD_button);
+            mainPanel.Controls.Add(DEL_button);
+            mainPanel.Controls.Add(UPD_button);
+            mainPanel.Controls.Add(MarkTEXTBOX);
+            mainPanel.Controls.Add(label2);
+            mainPanel.Controls.Add(guna2TextBox2);
+            mainPanel.Controls.Add(Field_nameTEXTBOX);
+            mainPanel.Controls.Add(ID_TEXTBOX);
             mainPanel.Controls.Add(Search_Button);
             mainPanel.Controls.Add(GroupTExtBox);
-            mainPanel.Controls.Add(label2);
             mainPanel.Controls.Add(NameTextBox);
             mainPanel.Controls.Add(label1);
             mainPanel.Controls.Add(LastNameTEXTBOX);
@@ -166,29 +190,39 @@
             mainPanel.Size = new Size(877, 386);
             mainPanel.TabIndex = 23;
             // 
+            // ID_TEXTBOX
+            // 
+            ID_TEXTBOX.AutoSize = true;
+            ID_TEXTBOX.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            ID_TEXTBOX.Location = new Point(604, 3);
+            ID_TEXTBOX.Name = "ID_TEXTBOX";
+            ID_TEXTBOX.Size = new Size(26, 18);
+            ID_TEXTBOX.TabIndex = 20;
+            ID_TEXTBOX.Text = "ID";
+            // 
             // Search_Button
             // 
             Search_Button.BorderRadius = 15;
-            Search_Button.CustomizableEdges = customizableEdges2;
+            Search_Button.CustomizableEdges = customizableEdges21;
             Search_Button.DisabledState.BorderColor = Color.DarkGray;
             Search_Button.DisabledState.CustomBorderColor = Color.DarkGray;
             Search_Button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             Search_Button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            Search_Button.FillColor = Color.LightBlue;
+            Search_Button.FillColor = Color.MediumAquamarine;
             Search_Button.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Search_Button.ForeColor = Color.Black;
-            Search_Button.Location = new Point(703, 213);
+            Search_Button.Location = new Point(616, 274);
             Search_Button.Margin = new Padding(3, 2, 3, 2);
             Search_Button.Name = "Search_Button";
-            Search_Button.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            Search_Button.Size = new Size(153, 46);
+            Search_Button.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            Search_Button.Size = new Size(102, 35);
             Search_Button.TabIndex = 19;
             Search_Button.Text = "Поиск";
             // 
             // GroupTExtBox
             // 
             GroupTExtBox.BorderRadius = 15;
-            GroupTExtBox.CustomizableEdges = customizableEdges4;
+            GroupTExtBox.CustomizableEdges = customizableEdges23;
             GroupTExtBox.DefaultText = "";
             GroupTExtBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             GroupTExtBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -197,29 +231,19 @@
             GroupTExtBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             GroupTExtBox.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             GroupTExtBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            GroupTExtBox.Location = new Point(692, 173);
+            GroupTExtBox.Location = new Point(603, 31);
             GroupTExtBox.Margin = new Padding(4, 3, 4, 3);
             GroupTExtBox.Name = "GroupTExtBox";
             GroupTExtBox.PlaceholderText = "";
             GroupTExtBox.SelectedText = "";
-            GroupTExtBox.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            GroupTExtBox.Size = new Size(181, 35);
+            GroupTExtBox.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            GroupTExtBox.Size = new Size(269, 35);
             GroupTExtBox.TabIndex = 17;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(692, 152);
-            label2.Name = "label2";
-            label2.Size = new Size(61, 18);
-            label2.TabIndex = 16;
-            label2.Text = "Группа";
             // 
             // NameTextBox
             // 
             NameTextBox.BorderRadius = 15;
-            NameTextBox.CustomizableEdges = customizableEdges6;
+            NameTextBox.CustomizableEdges = customizableEdges25;
             NameTextBox.DefaultText = "";
             NameTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             NameTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -228,29 +252,29 @@
             NameTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             NameTextBox.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             NameTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            NameTextBox.Location = new Point(692, 108);
+            NameTextBox.Location = new Point(603, 152);
             NameTextBox.Margin = new Padding(4, 3, 4, 3);
             NameTextBox.Name = "NameTextBox";
             NameTextBox.PlaceholderText = "";
             NameTextBox.SelectedText = "";
-            NameTextBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            NameTextBox.Size = new Size(181, 35);
+            NameTextBox.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            NameTextBox.Size = new Size(269, 35);
             NameTextBox.TabIndex = 15;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label1.Location = new Point(692, 87);
+            label1.Location = new Point(604, 131);
             label1.Name = "label1";
-            label1.Size = new Size(37, 18);
+            label1.Size = new Size(40, 18);
             label1.TabIndex = 14;
-            label1.Text = "имя";
+            label1.Text = "Имя";
             // 
             // LastNameTEXTBOX
             // 
             LastNameTEXTBOX.BorderRadius = 15;
-            LastNameTEXTBOX.CustomizableEdges = customizableEdges8;
+            LastNameTEXTBOX.CustomizableEdges = customizableEdges27;
             LastNameTEXTBOX.DefaultText = "";
             LastNameTEXTBOX.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             LastNameTEXTBOX.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -259,20 +283,20 @@
             LastNameTEXTBOX.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             LastNameTEXTBOX.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             LastNameTEXTBOX.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            LastNameTEXTBOX.Location = new Point(692, 46);
+            LastNameTEXTBOX.Location = new Point(604, 90);
             LastNameTEXTBOX.Margin = new Padding(4, 3, 4, 3);
             LastNameTEXTBOX.Name = "LastNameTEXTBOX";
             LastNameTEXTBOX.PlaceholderText = "";
             LastNameTEXTBOX.SelectedText = "";
-            LastNameTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            LastNameTEXTBOX.Size = new Size(181, 35);
+            LastNameTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            LastNameTEXTBOX.Size = new Size(268, 35);
             LastNameTEXTBOX.TabIndex = 9;
             // 
             // LastNamelavel
             // 
             LastNamelavel.AutoSize = true;
             LastNamelavel.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            LastNamelavel.Location = new Point(692, 25);
+            LastNamelavel.Location = new Point(603, 69);
             LastNamelavel.Name = "LastNamelavel";
             LastNamelavel.Size = new Size(78, 18);
             LastNamelavel.TabIndex = 2;
@@ -287,12 +311,12 @@
             DataTable.BorderStyle = BorderStyle.None;
             DataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataTable.Columns.AddRange(new DataGridViewColumn[] { Student_id, studentGropNumber, last_name, first_Naem, fieled_name, st_mark });
-            DataTable.Location = new Point(12, 5);
+            DataTable.Location = new Point(12, 10);
             DataTable.Margin = new Padding(3, 2, 3, 2);
             DataTable.Name = "DataTable";
             DataTable.RowHeadersVisible = false;
             DataTable.RowHeadersWidth = 51;
-            DataTable.Size = new Size(673, 369);
+            DataTable.Size = new Size(585, 355);
             DataTable.TabIndex = 0;
             // 
             // Student_id
@@ -331,7 +355,126 @@
             st_mark.HeaderText = "оценка";
             st_mark.Name = "st_mark";
             // 
-            // MainPageRU
+            // MarkTEXTBOX
+            // 
+            MarkTEXTBOX.BorderRadius = 15;
+            MarkTEXTBOX.CustomizableEdges = customizableEdges29;
+            MarkTEXTBOX.DefaultText = "";
+            MarkTEXTBOX.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            MarkTEXTBOX.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            MarkTEXTBOX.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            MarkTEXTBOX.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            MarkTEXTBOX.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            MarkTEXTBOX.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            MarkTEXTBOX.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            MarkTEXTBOX.Location = new Point(727, 274);
+            MarkTEXTBOX.Margin = new Padding(4, 3, 4, 3);
+            MarkTEXTBOX.Name = "MarkTEXTBOX";
+            MarkTEXTBOX.PlaceholderText = "";
+            MarkTEXTBOX.SelectedText = "";
+            MarkTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            MarkTEXTBOX.Size = new Size(145, 35);
+            MarkTEXTBOX.TabIndex = 24;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label2.Location = new Point(761, 253);
+            label2.Name = "label2";
+            label2.Size = new Size(73, 18);
+            label2.TabIndex = 23;
+            label2.Text = "ОЦЕНКА";
+            // 
+            // guna2TextBox2
+            // 
+            guna2TextBox2.BorderRadius = 15;
+            guna2TextBox2.CustomizableEdges = customizableEdges31;
+            guna2TextBox2.DefaultText = "";
+            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox2.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox2.Location = new Point(604, 212);
+            guna2TextBox2.Margin = new Padding(4, 3, 4, 3);
+            guna2TextBox2.Name = "guna2TextBox2";
+            guna2TextBox2.PlaceholderText = "";
+            guna2TextBox2.SelectedText = "";
+            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2TextBox2.Size = new Size(268, 35);
+            guna2TextBox2.TabIndex = 22;
+            // 
+            // Field_nameTEXTBOX
+            // 
+            Field_nameTEXTBOX.AutoSize = true;
+            Field_nameTEXTBOX.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            Field_nameTEXTBOX.Location = new Point(604, 191);
+            Field_nameTEXTBOX.Name = "Field_nameTEXTBOX";
+            Field_nameTEXTBOX.Size = new Size(102, 18);
+            Field_nameTEXTBOX.TabIndex = 21;
+            Field_nameTEXTBOX.Text = "Дисциплина";
+            // 
+            // UPD_button
+            // 
+            UPD_button.BorderRadius = 15;
+            UPD_button.CustomizableEdges = customizableEdges33;
+            UPD_button.DisabledState.BorderColor = Color.DarkGray;
+            UPD_button.DisabledState.CustomBorderColor = Color.DarkGray;
+            UPD_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            UPD_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            UPD_button.FillColor = Color.LightBlue;
+            UPD_button.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            UPD_button.ForeColor = Color.Black;
+            UPD_button.Location = new Point(703, 328);
+            UPD_button.Margin = new Padding(3, 2, 3, 2);
+            UPD_button.Name = "UPD_button";
+            UPD_button.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            UPD_button.Size = new Size(75, 46);
+            UPD_button.TabIndex = 25;
+            UPD_button.Text = "UPD";
+            // 
+            // DEL_button
+            // 
+            DEL_button.BorderRadius = 15;
+            DEL_button.CustomizableEdges = customizableEdges35;
+            DEL_button.DisabledState.BorderColor = Color.DarkGray;
+            DEL_button.DisabledState.CustomBorderColor = Color.DarkGray;
+            DEL_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            DEL_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            DEL_button.FillColor = Color.LightBlue;
+            DEL_button.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            DEL_button.ForeColor = Color.Black;
+            DEL_button.Location = new Point(784, 328);
+            DEL_button.Margin = new Padding(3, 2, 3, 2);
+            DEL_button.Name = "DEL_button";
+            DEL_button.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            DEL_button.Size = new Size(81, 46);
+            DEL_button.TabIndex = 26;
+            DEL_button.Text = "DEL";
+            // 
+            // ADD_button
+            // 
+            ADD_button.BorderRadius = 15;
+            ADD_button.CustomizableEdges = customizableEdges37;
+            ADD_button.DisabledState.BorderColor = Color.DarkGray;
+            ADD_button.DisabledState.CustomBorderColor = Color.DarkGray;
+            ADD_button.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            ADD_button.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            ADD_button.FillColor = Color.LightBlue;
+            ADD_button.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            ADD_button.ForeColor = Color.Black;
+            ADD_button.Location = new Point(616, 328);
+            ADD_button.Margin = new Padding(3, 2, 3, 2);
+            ADD_button.Name = "ADD_button";
+            ADD_button.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            ADD_button.Size = new Size(81, 46);
+            ADD_button.TabIndex = 27;
+            ADD_button.Text = "ADD";
+            // 
+            // MainPageAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -341,7 +484,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
-            Name = "MainPageRU";
+            Name = "MainPageAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainPage";
             panel1.ResumeLayout(false);
@@ -367,7 +510,6 @@
         private Guna.UI2.WinForms.Guna2TextBox LastNameTEXTBOX;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButton;
         private Guna.UI2.WinForms.Guna2TextBox GroupTExtBox;
-        private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox NameTextBox;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button Search_Button;
@@ -377,5 +519,13 @@
         private DataGridViewTextBoxColumn first_Naem;
         private DataGridViewTextBoxColumn fieled_name;
         private DataGridViewTextBoxColumn st_mark;
+        private Label ID_TEXTBOX;
+        private Guna.UI2.WinForms.Guna2Button ADD_button;
+        private Guna.UI2.WinForms.Guna2Button DEL_button;
+        private Guna.UI2.WinForms.Guna2Button UPD_button;
+        private Guna.UI2.WinForms.Guna2TextBox MarkTEXTBOX;
+        private Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Label Field_nameTEXTBOX;
     }
 }

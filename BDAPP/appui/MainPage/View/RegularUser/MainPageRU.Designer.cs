@@ -243,9 +243,9 @@
             label1.Font = new Font("Tahoma", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label1.Location = new Point(692, 87);
             label1.Name = "label1";
-            label1.Size = new Size(37, 18);
+            label1.Size = new Size(40, 18);
             label1.TabIndex = 14;
-            label1.Text = "имя";
+            label1.Text = "Имя";
             // 
             // LastNameTEXTBOX
             // 
@@ -331,7 +331,7 @@
             st_mark.HeaderText = "оценка";
             st_mark.Name = "st_mark";
             // 
-            // MainPageRU
+            // MainPageAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -341,7 +341,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 2, 3, 2);
-            Name = "MainPageRU";
+            Name = "MainPageAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainPage";
             panel1.ResumeLayout(false);
