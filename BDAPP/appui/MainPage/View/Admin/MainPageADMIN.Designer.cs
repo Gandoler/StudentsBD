@@ -528,7 +528,6 @@
         private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter2;
         private Panel mainPanel;
         private DataGridView DataTable;
-        private DateTimePicker dateTimePicker1;
         private Label LastNamelavel;
         private Guna.UI2.WinForms.Guna2TextBox LastNameTEXTBOX;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButton;

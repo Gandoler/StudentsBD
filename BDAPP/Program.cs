@@ -1,4 +1,4 @@
-using OTSC.MainPage.MainView;
+using BDAPP.appui.MainPage.View.RegularUser;
 using Serilog;
 using System.Diagnostics;
 
@@ -21,7 +21,7 @@ namespace BDAPP
 
 
             Log.Information("App start");
-            MainPageAdmin mainPageRU = new MainPageRU();
+            MainPageRU mainPageRU = new MainPageRU();
 
             Application.Run(mainPageRU);
         }

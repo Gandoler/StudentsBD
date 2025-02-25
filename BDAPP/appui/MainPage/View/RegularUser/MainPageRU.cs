@@ -1,5 +1,4 @@
 ﻿using BDAPP.appui.MainPage.Model;
-using BDAPP.appui.MainPage.View.RegularUser;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OTSC.MainPage.MainView
+namespace BDAPP.appui.MainPage.View.RegularUser
 {
-    public partial class MainPageAdmin : Form, IMainPageViewRu
+    public partial class MainPageRU : Form, IMainPageViewRu
     {
 
 
-        public MainPageAdmin()
+        public MainPageRU()
         {
 
             InitializeComponent();

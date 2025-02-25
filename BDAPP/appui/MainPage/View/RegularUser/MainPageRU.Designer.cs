@@ -1,6 +1,6 @@
-﻿namespace OTSC.MainPage.MainView
+﻿namespace BDAPP.appui.MainPage.View.RegularUser
 {
-    partial class MainPageAdmin
+    partial class MainPageRU
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPageAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPageRU));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -362,7 +362,6 @@
         private Npgsql.NpgsqlDataAdapter npgsqlDataAdapter2;
         private Panel mainPanel;
         private DataGridView DataTable;
-        private DateTimePicker dateTimePicker1;
         private Label LastNamelavel;
         private Guna.UI2.WinForms.Guna2TextBox LastNameTEXTBOX;
         private Guna.UI2.WinForms.Guna2CircleButton ExitButton;

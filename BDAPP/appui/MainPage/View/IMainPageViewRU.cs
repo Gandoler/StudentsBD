@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BDAPP.appui.MainPage.View.RegularUser
+namespace BDAPP.appui.MainPage.View
 {
     interface IMainPageViewRu
     {

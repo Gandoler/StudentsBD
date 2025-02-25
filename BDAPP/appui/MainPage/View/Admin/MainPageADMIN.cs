@@ -4,7 +4,7 @@ using System.Data;
 
 namespace BDAPP.appui.MainPage.View.Admin
 {
-    public partial class MainPageAdmin : Form
+    public partial class MainPageAdmin : Form, IMainPageAdminVeiw
     {
 
 
