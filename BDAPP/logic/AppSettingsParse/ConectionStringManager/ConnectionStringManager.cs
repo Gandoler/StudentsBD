@@ -19,7 +19,7 @@ namespace BDAPP.logic.AppSettingsParse.ConectionStringManager
             JsonReaderForConfig jsonReader = new JsonReaderForConfig();
             try
             {
-                rootConfig = jsonReader.Read<RootConfig>();
+                rootConfig = jsonReader.Read<RootConfig>(Settings1.Default.filepath);
                 Log.Information($"ConnectionStringManager: settings:{rootConfig}");
             }
             catch (Exception ex)
