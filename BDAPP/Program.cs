@@ -1,4 +1,5 @@
 using BDAPP.appui.Login;
+using BDAPP.appui.Login.Model;
 using BDAPP.appui.MainPage;
 using BDAPP.appui.MainPage.Model;
 using BDAPP.appui.MainPage.View.Admin;
@@ -7,6 +8,8 @@ using BDAPP.logic;
 using BDAPP.logic.AppSettingsParse.ConectionStringManager;
 using BDAPP.logic.DBTools.Managers.Connection;
 using BDAPP.logic.DBTools.Managers.CRUD;
+using BDAPP.logic.DBTools.Managers.Login;
+using calculator_winforms.AppLogic.Login.View;
 using Microsoft.VisualBasic.ApplicationServices;
 using Npgsql;
 using Serilog;
@@ -33,9 +36,19 @@ namespace BDAPP
 
             Log.Information("App start");
 
+            string? connectionString;
+            do
+            {
+                connectionString = ConnectionStringManager.GetConnectionString();
+            } while (connectionString == null);
 
+            ConnectDBManager connectDBManager = new(connectionString);
+            LoginManager loginManager = new LoginManager(connectDBManager);
+            LoginModel loginModel = new LoginModel(loginManager);
+            LoginFrom loginFrom = new LoginFrom();
+            Presenter presenter = new Presenter(loginFrom, loginModel);
             
-            Application.Run();
+            Application.Run(loginFrom);
 
 
 
