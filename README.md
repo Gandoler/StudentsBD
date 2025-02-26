@@ -13,6 +13,25 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO GlFr_admin;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO GlFr_admin;
 
 ```
+# создание таблицы для пользователей
+
+```sql
+CREATE TABLE app_users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL, 
+    role VARCHAR(20) NOT NULL CHECK (role IN ('admin', 'junior')) 
+);
+```
+# примерное заполнение
+
+```sql
+INSERT INTO app_users (username, password_hash, role)
+VALUES 
+    ('admin_user', '137913', 'admin'), -- Замените на реальный хэш
+    ('junior_user', '137913', 'junior'); -- Замените на реальный хэш
+
+```
 
 
 # вспомогательная функция в бд
