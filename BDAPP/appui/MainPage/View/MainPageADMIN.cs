@@ -29,7 +29,7 @@ namespace BDAPP.appui.MainPage.View.Admin
             ADD_button.Click += (s, e) => AddButtonClick?.Invoke(new StudentFieldTemplates(int.Parse(Idtextbox.Text), FieldNameTEXTBOX.Text, int.Parse(Mark_field.Text)));
             UPD_button.Click += (s, e) => UPDButtonClick?.Invoke(new StudentFieldTemplates(int.Parse(Idtextbox.Text), FieldNameTEXTBOX.Text, int.Parse(Mark_field.Text)));
 
-            DEL_button.Click += (s, e) => DELButtonClick?.Invoke(new StudentFieldTemplates(int.Parse(Idtextbox.Text), FieldNameTEXTBOX.Text, int.Parse(Mark_field.Text)));
+            DEL_button.Click += (s, e) => DELButtonClick?.Invoke(new StudentFieldTemplates(int.Parse(Idtextbox.Text), FieldNameTEXTBOX.Text,1));
 
 
             //appStart
@@ -109,6 +109,7 @@ namespace BDAPP.appui.MainPage.View.Admin
             NameTextBox.Clear();
             LastNameTEXTBOX.Clear();
             FieldNameTEXTBOX.Clear();
+            Mark_field.Clear();
 
         }
     }

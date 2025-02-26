@@ -26,8 +26,7 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
             string query = @"
                     UPDATE field_comprehensions 
                     SET mark = @newMark
-                    WHERE student_id = @studentId AND field = FIELDID_BY_Name(@field)
-                    RETURNING field_comprehensions_id";
+                    WHERE student_id = @studentId AND field = FIELDID_BY_Name(@field)";
 
             var parameters = new[]
                     {
@@ -151,7 +150,8 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
             FROM students s
             JOIN field_comprehensions fc ON s.student_id = fc.student_id
             JOIN fields f ON fc.field = f.field_id
-            WHERE s.student_id = @id";
+            WHERE s.student_id = @id
+            ORDER BY( s.student_id, f.field_name)";
             
             DataTable dataTable = new DataTable();
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
@@ -180,7 +180,8 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
                 FROM students s
                 JOIN field_comprehensions fc ON s.student_id = fc.student_id
                 JOIN fields f ON fc.field = f.field_id
-                WHERE s.last_name = @lastName AND s.first_name = @firstName";
+                WHERE s.last_name = @lastName AND s.first_name = @firstName
+                ORDER BY( s.student_id, f.field_name)";
 
             DataTable dataTable = new DataTable();
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
@@ -211,7 +212,8 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
                 FROM students s
                 JOIN field_comprehensions fc ON s.student_id = fc.student_id
                 JOIN fields f ON fc.field = f.field_id
-                WHERE s.last_name = @lastName AND s.first_name = @firstName AND s.students_group_number = @group";
+                WHERE s.last_name = @lastName AND s.first_name = @firstName AND s.students_group_number = @group
+                ORDER BY( s.student_id, f.field_name)";
 
             DataTable dataTable = new DataTable();
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
@@ -274,7 +276,8 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
             SELECT s.student_id, s.students_group_number, s.last_name, s.first_name, f.field_name, fc.mark
             FROM students s
             JOIN field_comprehensions fc ON s.student_id = fc.student_id
-            JOIN fields f ON fc.field = f.field_id";        
+            JOIN fields f ON fc.field = f.field_id
+            ORDER BY( s.student_id, f.field_name)";        
             DataTable dataTable = new DataTable();
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
             {
