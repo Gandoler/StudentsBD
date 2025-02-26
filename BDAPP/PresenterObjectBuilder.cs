@@ -25,11 +25,11 @@ namespace BDAPP
             string? connectionString;
             do
             {
-                connectionString = ConnectionStringManager.GetConnectionString(User.Instance.Role,"137913");
+                connectionString = ConnectionStringManager.GetConnectionString(User.Instance.Role,137913);
             } while (connectionString == null);
 
-            ConnectDBManager connectDBManager = new(connectionString);
-            CrudManager crudManager = new(connectDBManager);
+            ConnectDBManager.Instance.ConnectionString = connectionString;
+            CrudManager crudManager = new(ConnectDBManager.Instance);
             MainPageModel mainPageModel = new MainPageModel(crudManager);
 
             PresenterMain presenter;

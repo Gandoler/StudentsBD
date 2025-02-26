@@ -1,13 +1,23 @@
 ﻿using Npgsql;
 using Serilog;
 using System.Data;
+using System.Diagnostics;
 
 namespace BDAPP.logic.DBTools.Managers.Connection
 {
     internal class ConnectDBManager : IConnectManager
     {
-        private readonly string _connectionString;
+        private static ConnectDBManager instance = new();
+        public static ConnectDBManager  Instance { get => instance; }
+        private string _connectionString;
         private NpgsqlConnection? _connection;
+        public string ConnectionString 
+        { 
+            set {
+                Disconnect();
+                _connectionString = value; 
+            } 
+        }
 
         public NpgsqlConnection? SqlConnection
         {
@@ -31,16 +41,14 @@ namespace BDAPP.logic.DBTools.Managers.Connection
             }
         }
 
-        public ConnectDBManager(string conectionString)
-        {
-            _connectionString = conectionString;
-        }
+        private ConnectDBManager() { }
 
 
         public void Connect()
         {
             try
             {
+                
                 _connection = new NpgsqlConnection(_connectionString);
                 _connection.Open();
 

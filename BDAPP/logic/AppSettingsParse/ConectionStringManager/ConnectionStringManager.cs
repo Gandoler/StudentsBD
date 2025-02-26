@@ -38,7 +38,7 @@ namespace BDAPP.logic.AppSettingsParse.ConectionStringManager
             return null;
         }
 
-        public static string? GetConnectionString(string role, string psw)
+        public static string? GetConnectionString(string role, int psw)
         {
             if (rootConfig.ServerSettings != null)
             {

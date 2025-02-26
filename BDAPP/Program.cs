@@ -26,8 +26,7 @@ namespace BDAPP
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+ 
             ApplicationConfiguration.Initialize();
             Log.Logger = new LoggerConfiguration()
                .WriteTo.File(@"C:\Users\glkru\source\repos\BDAPP\BDAPP\Log\myapp.log", rollingInterval: RollingInterval.Day)
@@ -42,11 +41,11 @@ namespace BDAPP
                 connectionString = ConnectionStringManager.GetConnectionString();
             } while (connectionString == null);
 
-            ConnectDBManager connectDBManager = new(connectionString);
-            LoginManager loginManager = new LoginManager(connectDBManager);
+            ConnectDBManager.Instance.ConnectionString = connectionString;
+            LoginManager loginManager = new LoginManager(ConnectDBManager.Instance);
             LoginModel loginModel = new LoginModel(loginManager);
             LoginFrom loginFrom = new LoginFrom();
-            Presenter presenter = new Presenter(loginFrom, loginModel);
+            PresenterLogin presenter = new PresenterLogin(loginFrom, loginModel);
             
             Application.Run(loginFrom);
 

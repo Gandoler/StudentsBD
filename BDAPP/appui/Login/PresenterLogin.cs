@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace BDAPP.appui.Login
 {
-    class Presenter
+    class PresenterLogin
     {
         private readonly ILoginView _loginView;
         private readonly ILoginModel _imodelka;
 
 
 
-        public Presenter(ILoginView loginView, ILoginModel imodelka)
+        public PresenterLogin(ILoginView loginView, ILoginModel imodelka)
         {
             _loginView = loginView;
             _imodelka = imodelka;
@@ -54,7 +54,8 @@ namespace BDAPP.appui.Login
 
         private void Imodelka_LoginFailed(object? sender, string e)
         {
-            MessageBox.Show("Unexpected Error", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Нет такого пользователя", "Erorr", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Application.Exit();
         }
 
         private void LoginView_LoginButtonClick(object? sender, (string, string) e)

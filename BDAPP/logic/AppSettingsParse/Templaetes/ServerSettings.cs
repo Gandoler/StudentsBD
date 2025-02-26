@@ -10,7 +10,7 @@ namespace BDAPP.logic.AppSettingsParse.Templaetes
         public string User { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
 
-        public string GetConnectionString()
+        public string? GetConnectionString()
         {
             if (string.IsNullOrWhiteSpace(Server) ||
                 string.IsNullOrWhiteSpace(Database) ||
@@ -26,8 +26,10 @@ namespace BDAPP.logic.AppSettingsParse.Templaetes
         }
 
 
-        public string GetConnectionString(string role, string psw)
+        public string? GetConnectionString(string role, int psw)
         {
+            string password = psw.ToString();  // Преобразуем пароль в строку
+
             if (string.IsNullOrWhiteSpace(Server) ||
                 string.IsNullOrWhiteSpace(Database) ||
                 string.IsNullOrWhiteSpace(User) ||
@@ -37,9 +39,16 @@ namespace BDAPP.logic.AppSettingsParse.Templaetes
                 Log.Error("ServerSettings: One or more required fields are missing for the connection string.");
                 return null;
             }
-            if(role == "admin") { return $"Server={Server};Port={Port};Database={Database};User id={"GlFr_admin "};Password={psw};"; }
-            return $"Server={Server};Port={Port};Database={Database};User id={"GlFr_junior"};Password={psw};";
-
+            if (role == "admin")
+            {
+                return $"Server={Server};Port={Port};Database={Database};User id=glfr_admin;Password={password};";
+            }
+            else if (role == "junior")
+            {
+                return $"Server={Server};Port={Port};Database={Database};User id=glfr_junior;Password={password};";
+            }
+            MessageBox.Show("Ваш аккаунт нераспознан базовые функции выключены", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return $"Server={Server};Port={Port};Database={Database};User id={User};Password={Password};";
         }
 
         public override string ToString()

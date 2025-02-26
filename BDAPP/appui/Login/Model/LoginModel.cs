@@ -43,6 +43,7 @@ namespace BDAPP.appui.Login.Model
             }
             catch (Exception exception)
             {
+
                 LoginFailed?.Invoke(this, exception.Message);
             }
 

@@ -18,13 +18,14 @@ namespace BDAPP.logic.DBTools.Managers.Login
 
         public bool Login(string username, string password)
         {
-            string query = "SELECT user_id, username, role FROM app_users WHERE username = @username AND password = @password";
+            string query = "SELECT user_id, username, role FROM app_users WHERE username = @username AND password = @password";  // убрал кавычки вокруг параметров
+
             Log.Information("Try to Login in LoginManager");
 
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
             {
                 command.Parameters.AddWithValue("@username", username);
-                command.Parameters.AddWithValue("@passwordHash", password);
+                command.Parameters.AddWithValue("@password", password);
 
 
                 using (var reader = command.ExecuteReader())
