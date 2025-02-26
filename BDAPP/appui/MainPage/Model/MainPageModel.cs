@@ -13,18 +13,18 @@ namespace BDAPP.appui.MainPage.Model
     class MainPageModel: IMainPageModel
     {
 
-        private readonly User _bduser;
+        
         private readonly ICrudManager _crudManager;
 
-        public MainPageModel(ICrudManager crudManager, User bduser)
+        public MainPageModel(ICrudManager crudManager)
         {
             _crudManager = crudManager;
-            _bduser = bduser;
+            
         }
 
         public void AddMark(StudentFieldTemplates studentFieldTemplates)
         {
-            if (_bduser.Role == "junior")
+            if (User.Instance.Role == "junior")
             {
                 Log.Information("junchik попытался взять данные");
                 return;
@@ -34,7 +34,7 @@ namespace BDAPP.appui.MainPage.Model
 
         public void UpdateMark(StudentFieldTemplates studentFieldTemplates)
         {
-            if (_bduser.Role == "junior")
+            if (User.Instance.Role == "junior")
             {
                 Log.Information("junchik попытался взять данные");
                 return;
@@ -44,7 +44,7 @@ namespace BDAPP.appui.MainPage.Model
 
         public void DeleteMark(StudentFieldTemplates studentFieldTemplates)
         {
-            if (_bduser.Role == "junior")
+            if (User.Instance.Role == "junior")
             {
                 Log.Information("junchik попытался взять данные");
                 return;

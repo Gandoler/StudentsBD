@@ -32,21 +32,10 @@ namespace BDAPP
 
 
             Log.Information("App start");
-            MainPageRU mainPageRU = new MainPageRU();
-            MainPageAdmin admin = new MainPageAdmin();
-            string? connectionString;
-            do
-            {
-                connectionString = ConnectionStringManager.GetConnectionString();
-            } while (connectionString == null);
 
-            ConnectDBManager connectDBManager = new(connectionString);
-            CrudManager crudManager = new(connectDBManager);
-            MainPageModel mainPageModel = new MainPageModel(crudManager, Role.admin);
 
-            PresenterMain presenter = new PresenterMain(admin, mainPageModel);
-
-            Application.Run(admin);
+            if(PresenterObjectBuilder.PresenterMainAndView.Item2 is Form startform)
+            Application.Run(startform);
 
 
 
@@ -57,101 +46,102 @@ namespace BDAPP
 
 
 
-        private static void ExecuteQueryAndLogResult()
-        {
-            string query = @"
-        SELECT table_name 
-        FROM information_schema.tables 
-        WHERE table_schema = 'public';
-    ";
+        //    private static void ExecuteQueryAndLogResult()
+        //    {
+        //        string query = @"
+        //    SELECT table_name 
+        //    FROM information_schema.tables 
+        //    WHERE table_schema = 'public';
+        //";
 
-            var connectionString = "Server=5.144.179.242;Port=6034;Database=STUDENTSNEW;User id =postgres;Password=Gtybc001;";
+        //        var connectionString = "Server=5.144.179.242;Port=6034;Database=STUDENTSNEW;User id =postgres;Password=Gtybc001;";
 
-            DataTable dataTable = new DataTable();
-            using (var connection = new NpgsqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-                    Log.Information("Подключение к базе данных успешно установлено.");
+        //        DataTable dataTable = new DataTable();
+        //        using (var connection = new NpgsqlConnection(connectionString))
+        //        {
+        //            try
+        //            {
+        //                connection.Open();
+        //                Log.Information("Подключение к базе данных успешно установлено.");
 
-                    using (var command = new NpgsqlCommand(query, connection))
-                    {
-                        using (var reader = command.ExecuteReader())
-                        {
-                            dataTable.Load(reader);
-                        }
-                    }
+        //                using (var command = new NpgsqlCommand(query, connection))
+        //                {
+        //                    using (var reader = command.ExecuteReader())
+        //                    {
+        //                        dataTable.Load(reader);
+        //                    }
+        //                }
 
-                    // Логируем результаты
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        foreach (DataRow row in dataTable.Rows)
-                        {
-                            string tableName = row["table_name"].ToString();
-                            Log.Information($"Найдена таблица: {tableName}");
-                        }
-                    }
-                    else
-                    {
-                        Log.Information("Таблицы не найдены.");
-                    }
-                }
-                catch (NpgsqlException ex)
-                {
-                    Log.Error("Ошибка при подключении к базе данных: " + ex.Message);
-                    Log.Error("Stack trace: " + ex.StackTrace);
-                }
-                catch (Exception ex)
-                {
-                    Log.Error("Неизвестная ошибка: " + ex.Message);
-                    Log.Error("Stack trace: " + ex.StackTrace);
-                }
-            }
-        }
-
-
-        public static void ExecuteQueryAndLogResult2()
-        {
-            using (var connection = new NpgsqlConnection($"Host=5.144.179.242;Port=6043;Username=postgres;Password=Gtybc001;"))
-            {
-                try
-                {
-                    connection.Open();
-                    // Get all schemas
-                    string getSchemasQuery = "SELECT schema_name FROM information_schema.schemata;";
-                    using (var commandSchemas = new NpgsqlCommand(getSchemasQuery, connection))
-                    using (var readerSchemas = commandSchemas.ExecuteReader())
-                    {
-                        while (readerSchemas.Read())
-                        {
-                            string schemaName = readerSchemas.GetString(0);
-                            Log.Information($"Schema: {schemaName}");
-
-                            // Get all tables for the current schema
-                            string getTablesQuery = $@"
-                        SELECT table_name 
-                        FROM information_schema.tables 
-                        WHERE table_schema = '{schemaName}';";
-                            using (var commandTables = new NpgsqlCommand(getTablesQuery, connection))
-                            using (var readerTables = commandTables.ExecuteReader())
-                            {
-                                while (readerTables.Read())
-                                {
-                                    string tableName = readerTables.GetString(0);
-                                    Log.Information($"Table: {tableName}");
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.Error("Ошибка при выполнении запроса: " + ex.Message);
-                }
-            }
-        }
+        //                // Логируем результаты
+        //                if (dataTable.Rows.Count > 0)
+        //                {
+        //                    foreach (DataRow row in dataTable.Rows)
+        //                    {
+        //                        string tableName = row["table_name"].ToString();
+        //                        Log.Information($"Найдена таблица: {tableName}");
+        //                    }
+        //                }
+        //                else
+        //                {
+        //                    Log.Information("Таблицы не найдены.");
+        //                }
+        //            }
+        //            catch (NpgsqlException ex)
+        //            {
+        //                Log.Error("Ошибка при подключении к базе данных: " + ex.Message);
+        //                Log.Error("Stack trace: " + ex.StackTrace);
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                Log.Error("Неизвестная ошибка: " + ex.Message);
+        //                Log.Error("Stack trace: " + ex.StackTrace);
+        //            }
+        //        }
+        //    }
 
 
+        //    public static void ExecuteQueryAndLogResult2()
+        //    {
+        //        using (var connection = new NpgsqlConnection($"Host=5.144.179.242;Port=6043;Username=postgres;Password=Gtybc001;"))
+        //        {
+        //            try
+        //            {
+        //                connection.Open();
+        //                // Get all schemas
+        //                string getSchemasQuery = "SELECT schema_name FROM information_schema.schemata;";
+        //                using (var commandSchemas = new NpgsqlCommand(getSchemasQuery, connection))
+        //                using (var readerSchemas = commandSchemas.ExecuteReader())
+        //                {
+        //                    while (readerSchemas.Read())
+        //                    {
+        //                        string schemaName = readerSchemas.GetString(0);
+        //                        Log.Information($"Schema: {schemaName}");
+
+        //                        // Get all tables for the current schema
+        //                        string getTablesQuery = $@"
+        //                    SELECT table_name 
+        //                    FROM information_schema.tables 
+        //                    WHERE table_schema = '{schemaName}';";
+        //                        using (var commandTables = new NpgsqlCommand(getTablesQuery, connection))
+        //                        using (var readerTables = commandTables.ExecuteReader())
+        //                        {
+        //                            while (readerTables.Read())
+        //                            {
+        //                                string tableName = readerTables.GetString(0);
+        //                                Log.Information($"Table: {tableName}");
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                Log.Error("Ошибка при выполнении запроса: " + ex.Message);
+        //            }
+        //        }
+        //    }
+
+
+        //}
     }
 }
