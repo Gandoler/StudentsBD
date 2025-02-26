@@ -1,0 +1,9 @@
+﻿{
+  "serverSetings": {
+    "Server": "5.144.179.242",
+    "Port": 6034,
+    "Database": "STUDENTSNEW",
+    "User": "app_connector",
+    "Password": "137913"
+  }
+}
