@@ -34,8 +34,8 @@ namespace BDAPP
             Log.Information("App start");
 
 
-            if(PresenterObjectBuilder.PresenterMainAndView.Item2 is Form startform)
-            Application.Run(startform);
+            
+            Application.Run();
 
 
 

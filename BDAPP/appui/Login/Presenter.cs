@@ -45,7 +45,11 @@ namespace BDAPP.appui.Login
 
         private void Imodelka_LoginGo(bool obj)
         {
-            throw new NotImplementedException();
+           if(PresenterObjectBuilder.PresenterMainAndView.Item2 is Form MainPage && _loginView is Form loginPage)
+            {
+                loginPage.Hide();
+                MainPage.Show();
+            }
         }
 
         private void Imodelka_LoginFailed(object? sender, string e)
