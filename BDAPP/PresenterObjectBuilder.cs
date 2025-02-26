@@ -25,7 +25,7 @@ namespace BDAPP
             string? connectionString;
             do
             {
-                connectionString = ConnectionStringManager.GetConnectionString();
+                connectionString = ConnectionStringManager.GetConnectionString(User.Instance.Role,"137913");
             } while (connectionString == null);
 
             ConnectDBManager connectDBManager = new(connectionString);
