@@ -1,7 +1,13 @@
 
-# создание двух ролей
+# создание трех ролей
 
 ```sql
+
+CREATE ROLE app_connector WITH LOGIN PASSWORD 'connector_password';
+GRANT CONNECT ON DATABASE your_database_name TO app_connector;
+GRANT USAGE ON SCHEMA public TO app_connector;
+GRANT SELECT ON app_users TO app_connector;
+
 CREATE ROLE GlFr_junior WITH LOGIN PASSWORD '137913';
 GRANT CONNECT ON DATABASE your_database_name TO GlFr_junior;
 GRANT USAGE ON SCHEMA public TO GlFr_junior;
