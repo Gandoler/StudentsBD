@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BDAPP.logic
 {
-    enum Role
+    public enum Role
     {
         junior,
         admin
