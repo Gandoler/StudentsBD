@@ -65,24 +65,20 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
 
             string query = @"
                 INSERT INTO field_comprehensions (student_id, field, mark) 
-                VALUES (@studentId, FIELDID_BY_Name(@field), @mark)
-                RETURNING field_comprehensions_id";
+                VALUES (@studentId, FIELDID_BY_Name(@field), @mark)";
 
             var parameters = new[]
             {
-                new SqlParameter("@studentId", SqlDbType.Int) { Value = student_id },
-                new SqlParameter("@field", SqlDbType.VarChar) { Value = field_Name },
-                new SqlParameter("@mark", SqlDbType.Int) { Value = mark }
+                new NpgsqlParameter("@studentId", NpgsqlTypes.NpgsqlDbType.Integer) { Value = student_id },
+                new NpgsqlParameter("@field", NpgsqlTypes.NpgsqlDbType.Varchar) { Value = field_Name },
+                new NpgsqlParameter("@mark", NpgsqlTypes.NpgsqlDbType.Integer) { Value = mark }
             };
 
 
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
             {
 
-                command.Parameters.AddWithValue(parameters[0]);
-                command.Parameters.AddWithValue(parameters[1]);
-                command.Parameters.AddWithValue(parameters[2]);
-
+                command.Parameters.AddRange(parameters);
                 try
                 {
                     command.ExecuteNonQuery();
@@ -244,7 +240,8 @@ namespace BDAPP.logic.DBTools.Managers.CRUD
                 FROM students s
                 JOIN field_comprehensions fc ON s.student_id = fc.student_id
                 JOIN fields f ON fc.field = f.field_id
-                WHERE f.field_name = @fieldName AND  s.student_id = @id";
+                WHERE f.field_name = @fieldName AND  s.student_id = @id
+                ORDER BY( s.student_id, f.field_name)";
 
             DataTable dataTable = new DataTable();
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
