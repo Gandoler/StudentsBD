@@ -63,9 +63,9 @@
             ADD_button = new Guna.UI2.WinForms.Guna2Button();
             DEL_button = new Guna.UI2.WinForms.Guna2Button();
             UPD_button = new Guna.UI2.WinForms.Guna2Button();
-            MarkTEXTBOX = new Guna.UI2.WinForms.Guna2TextBox();
+            Mark_field = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            FieldNameTEXTBOX = new Guna.UI2.WinForms.Guna2TextBox();
             Field_nameTEXTBOX = new Label();
             ID_TEXTBOX = new Label();
             Search_Button = new Guna.UI2.WinForms.Guna2Button();
@@ -170,9 +170,9 @@
             mainPanel.Controls.Add(ADD_button);
             mainPanel.Controls.Add(DEL_button);
             mainPanel.Controls.Add(UPD_button);
-            mainPanel.Controls.Add(MarkTEXTBOX);
+            mainPanel.Controls.Add(Mark_field);
             mainPanel.Controls.Add(label2);
-            mainPanel.Controls.Add(guna2TextBox2);
+            mainPanel.Controls.Add(FieldNameTEXTBOX);
             mainPanel.Controls.Add(Field_nameTEXTBOX);
             mainPanel.Controls.Add(ID_TEXTBOX);
             mainPanel.Controls.Add(Search_Button);
@@ -264,26 +264,26 @@
             UPD_button.TabIndex = 25;
             UPD_button.Text = "UPD";
             // 
-            // MarkTEXTBOX
+            // Mark_field
             // 
-            MarkTEXTBOX.BorderRadius = 15;
-            MarkTEXTBOX.CustomizableEdges = customizableEdges31;
-            MarkTEXTBOX.DefaultText = "";
-            MarkTEXTBOX.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            MarkTEXTBOX.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            MarkTEXTBOX.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            MarkTEXTBOX.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            MarkTEXTBOX.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            MarkTEXTBOX.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            MarkTEXTBOX.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            MarkTEXTBOX.Location = new Point(727, 274);
-            MarkTEXTBOX.Margin = new Padding(4, 3, 4, 3);
-            MarkTEXTBOX.Name = "MarkTEXTBOX";
-            MarkTEXTBOX.PlaceholderText = "";
-            MarkTEXTBOX.SelectedText = "";
-            MarkTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            MarkTEXTBOX.Size = new Size(145, 35);
-            MarkTEXTBOX.TabIndex = 24;
+            Mark_field.BorderRadius = 15;
+            Mark_field.CustomizableEdges = customizableEdges31;
+            Mark_field.DefaultText = "";
+            Mark_field.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            Mark_field.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            Mark_field.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            Mark_field.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            Mark_field.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            Mark_field.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            Mark_field.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            Mark_field.Location = new Point(727, 274);
+            Mark_field.Margin = new Padding(4, 3, 4, 3);
+            Mark_field.Name = "Mark_field";
+            Mark_field.PlaceholderText = "";
+            Mark_field.SelectedText = "";
+            Mark_field.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            Mark_field.Size = new Size(145, 35);
+            Mark_field.TabIndex = 24;
             // 
             // label2
             // 
@@ -295,26 +295,26 @@
             label2.TabIndex = 23;
             label2.Text = "ОЦЕНКА";
             // 
-            // guna2TextBox2
+            // FieldNameTEXTBOX
             // 
-            guna2TextBox2.BorderRadius = 15;
-            guna2TextBox2.CustomizableEdges = customizableEdges33;
-            guna2TextBox2.DefaultText = "";
-            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(604, 212);
-            guna2TextBox2.Margin = new Padding(4, 3, 4, 3);
-            guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PlaceholderText = "";
-            guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            guna2TextBox2.Size = new Size(268, 35);
-            guna2TextBox2.TabIndex = 22;
+            FieldNameTEXTBOX.BorderRadius = 15;
+            FieldNameTEXTBOX.CustomizableEdges = customizableEdges33;
+            FieldNameTEXTBOX.DefaultText = "";
+            FieldNameTEXTBOX.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            FieldNameTEXTBOX.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            FieldNameTEXTBOX.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            FieldNameTEXTBOX.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            FieldNameTEXTBOX.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            FieldNameTEXTBOX.Font = new Font("Tahoma", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            FieldNameTEXTBOX.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            FieldNameTEXTBOX.Location = new Point(604, 212);
+            FieldNameTEXTBOX.Margin = new Padding(4, 3, 4, 3);
+            FieldNameTEXTBOX.Name = "FieldNameTEXTBOX";
+            FieldNameTEXTBOX.PlaceholderText = "";
+            FieldNameTEXTBOX.SelectedText = "";
+            FieldNameTEXTBOX.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            FieldNameTEXTBOX.Size = new Size(268, 35);
+            FieldNameTEXTBOX.TabIndex = 22;
             // 
             // Field_nameTEXTBOX
             // 
@@ -496,9 +496,9 @@
         private Guna.UI2.WinForms.Guna2Button ADD_button;
         private Guna.UI2.WinForms.Guna2Button DEL_button;
         private Guna.UI2.WinForms.Guna2Button UPD_button;
-        private Guna.UI2.WinForms.Guna2TextBox MarkTEXTBOX;
+        private Guna.UI2.WinForms.Guna2TextBox Mark_field;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox FieldNameTEXTBOX;
         private Label Field_nameTEXTBOX;
         private Guna.UI2.WinForms.Guna2Button ClearSearch_button;
     }

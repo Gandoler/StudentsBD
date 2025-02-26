@@ -93,24 +93,23 @@ namespace BDAPP.appui.MainPage
 
         private void _mainPageAdminVeiw_UPDButtonClick(StudentFieldTemplates obj)
         {
-            if (obj == null)
+            if(obj.Mark == 1)
             {
-                MessageBox.Show("Ошибка: объект студента не задан.");
+                MessageBox.Show("Ошибка: парса оценки");
+            }
+            if(obj.Mark <=1 || obj.Mark > 5)
+            {
+                MessageBox.Show("Ошибка:Оценка");
                 return;
             }
+            
 
-            if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name) || obj.Mark == 0)
+            if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name))
             {
-                if (obj.Mark == 0)
-                { 
-                    MessageBox.Show("Ошибка:Оценка ");
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Ошибка: не все обязательные поля заполнены ID и Предмет.");
-                    return;
-                }
+                              
+                MessageBox.Show("Ошибка: не все обязательные поля заполнены ID и Предмет.");
+                return;
+               
             }
 
             _mainPageModel.UpdateMark(obj);
@@ -119,13 +118,19 @@ namespace BDAPP.appui.MainPage
 
         private void _mainPageAdminVeiw_AddButtonClick(StudentFieldTemplates obj)
         {
+            if (obj.Mark <= 1 || obj.Mark > 5)
+            {
+                MessageBox.Show("Ошибка:Оценка ");
+                return;
+            }
+
             if (obj == null)
             {
                 MessageBox.Show("Ошибка: объект студента не задан.");
                 return;
             }
 
-            if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name) || obj.Mark == 0)
+            if (obj.Student_id == 0 || string.IsNullOrEmpty(obj.Field_Name) )
             {
                 MessageBox.Show("Ошибка: не все обязательные поля заполнены ID, Оценка и Предмет.");
                 return;

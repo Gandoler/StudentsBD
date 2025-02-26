@@ -15,16 +15,7 @@ namespace BDAPP.appui.MainPage.Model
         private string _student_Group_Number = string.Empty;
         private int _mark;
 
-        // for db init
-     public StudentFieldTemplates(int student_id, string last_Name, string first_Name, string field_Name, int mark, string student_Group_Number)
-        {
-            _student_id = student_id;
-            _last_Name = last_Name;
-            _first_Name = first_Name;
-            _field_Name = field_Name;
-            _mark = mark;
-            _student_Group_Number = student_Group_Number;
-        }
+     
         // fast search
         public StudentFieldTemplates(int student_id)
         {
@@ -40,7 +31,7 @@ namespace BDAPP.appui.MainPage.Model
         }
 
    
-
+       // search by names
         public StudentFieldTemplates(string last_Name, string first_Name)
         {
             _last_Name = last_Name;
@@ -53,7 +44,7 @@ namespace BDAPP.appui.MainPage.Model
         {
             _student_id = student_id;
             _field_Name = field_Name;
-            _mark = Mark;
+            _mark = mark;
         }
 
         public int Student_id { get => _student_id;  }
