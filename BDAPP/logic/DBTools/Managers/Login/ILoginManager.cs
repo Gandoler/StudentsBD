@@ -1,4 +1,6 @@
-﻿namespace BDAPP.logic.DBTools.Managers.Login
+﻿using BDAPP.appui.Login.Model;
+
+namespace BDAPP.logic.DBTools.Managers.Login
 {
     internal interface ILoginManager
     {

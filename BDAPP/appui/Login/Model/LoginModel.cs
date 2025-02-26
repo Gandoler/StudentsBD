@@ -31,6 +31,7 @@ namespace BDAPP.appui.Login.Model
         {
             try
             {
+                
                 if (_loginManager.Login(_login, _password))
                 {
                     LoginGo?.Invoke(true);

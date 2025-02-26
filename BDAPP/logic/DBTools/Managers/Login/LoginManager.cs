@@ -1,4 +1,5 @@
-﻿using BDAPP.logic.DBTools.Managers.Connection;
+﻿using BDAPP.appui.Login.Model;
+using BDAPP.logic.DBTools.Managers.Connection;
 using Npgsql;
 using Serilog;
 
@@ -15,32 +16,32 @@ namespace BDAPP.logic.DBTools.Managers.Login
             Log.Information($"Открыто подключение к дб для {nameof(LoginManager)}");
         }
 
-        public bool Login(string login, string password)
+        public bool Login(string username, string password)
         {
-            string query = "SELECT COUNT(*) FROM UsersLogins WHERE login = @Login AND password = @Password";
+            string query = "SELECT user_id, username, role FROM app_users WHERE username = @username AND password = @password";
             Log.Information("Try to Login in LoginManager");
 
             using (var command = new NpgsqlCommand(query, _connectManager.SqlConnection))
             {
-                command.Parameters.AddWithValue("@Login", login);
-                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@passwordHash", password);
 
-                int count = Convert.ToInt32(command.ExecuteScalar());
 
-                if (count == 1)
+                using (var reader = command.ExecuteReader())
                 {
-                    Log.Information("Log in Successful");
-                    return true;
-                }
-                else
-                {
-                    Log.Warning("Log in invalid --- Password or Login Incorrect");
-                    return false;
+                    if (reader.Read())
+                    {
+                        User.Instance.UserId = reader.GetInt32(0);
+                        User.Instance.Username = reader.GetString(1);
+                        User.Instance.Role = reader.GetString(2);
+                        return true;
+                    }
                 }
             }
+            return false;
         }
+        
 
-     
         public void Dispose()
         {
             _connectManager.Disconnect();
